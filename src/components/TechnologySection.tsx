@@ -28,7 +28,7 @@ const TechnologySection = () => {
   return (
     <section id="technology" className="py-24 lg:py-32 bg-[#0a0a0a]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Content */}
           <div>
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Technology</span>
@@ -37,7 +37,7 @@ const TechnologySection = () => {
             </h2>
             <p className="mt-6 text-lg text-gray-400">
               Our proprietary technology stack combines advanced machine learning, patented hardware, 
-              and flexible deployment options to deliver unmatched quality control performance.
+              and flexible deployment options to deliver unmatched quality control performance - enabling us to exceed human accuracy.
             </p>
 
             {/* Tech Grid */}
@@ -60,7 +60,7 @@ const TechnologySection = () => {
           </div>
 
           {/* Visual - NVIDIA Inception Badge */}
-          <div className="relative flex items-center justify-center lg:justify-end">
+          <div className="relative flex items-start justify-center lg:justify-end pt-[140px]">
             <div className="rounded-2xl overflow-hidden shadow-2xl w-full max-w-2xl">
               <img
                 src={nvidiaInceptionImg}
