@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.png";
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center">
@@ -22,14 +20,6 @@ const HeroSection = () => {
         
         <div className="flex-1" />
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="sm:size-xl" variant="default" asChild>
-            <a href="#contact" className="group mt-10 sm:mt-16">
-              Book a Demo
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-        </div>
       </div>
       
       {/* Gradient overlay at bottom */}
