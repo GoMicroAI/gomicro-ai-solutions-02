@@ -31,7 +31,7 @@ const ContactSection = () => {
           <div>
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Contact</span>
             <h2 className="mt-4 text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground">
-              Reduce Rejections and Save QC Costs
+              Book a Demo Today
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
               Ready to transform your quality control process? Get in touch with our team to schedule 
