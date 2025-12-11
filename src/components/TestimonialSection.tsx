@@ -1,20 +1,30 @@
-import mikeFeildon from "@/assets/mike-feildon.png";
-import amanpreetSingh from "@/assets/amanpreet-singh.png";
-import kateMcintyre from "@/assets/kate-mcintyre.png";
-import vijeeshSathyanesan from "@/assets/vijeesh-sathyanesan.png";
-import grainsMachine from "@/assets/grains-machine.png";
-import nutsMachine from "@/assets/nuts-machine.png";
-import fruitsMachine from "@/assets/fruits-machine.png";
+import kurtWalter from "@/assets/kurt-walter.jpg";
+import amanpreetSingh from "@/assets/amanpreet-singh-new.jpg";
+import kateMcintyre from "@/assets/kate-mcintyre-new.jpg";
+import vijeeshSathyanesan from "@/assets/vijeesh-sathyanesan-new.jpg";
+import lentilsBg from "@/assets/lentils-bg.jpg";
+import wheatBg from "@/assets/wheat-bg.jpg";
+import soyBg from "@/assets/soy-bg.jpg";
+import cardamomBg from "@/assets/cardamom-bg.jpg";
 
 const testimonials = [
   {
-    quote: "We have deployed and integrated a host of technologies and found GoMicro Assessor as one of the most reliable technology on repeatability and reproducibility.",
+    quote: "GoMicro Assessor can accurately predict the final outcome of the grade of their grain after cleaning",
+    name: "Kurt Walter",
+    role: "Director",
+    company: "Walco Seed Cleaning",
+    subtitle: "",
+    image: kurtWalter,
+    bgImage: lentilsBg,
+  },
+  {
+    quote: "We have deployed and integrated a host of technologies and have found GoMicro Assessor as one of the most reliable technology on repeatability and reproducibility.",
     name: "Amanpreet Singh",
     role: "CEO",
     company: "Grain Analyser Ltd.",
     subtitle: "Investor/Advisor-GoMicro",
     image: amanpreetSingh,
-    bgImage: grainsMachine,
+    bgImage: wheatBg,
   },
   {
     quote: "The technology developed by GoMicro will allow us to establish the quality of the soybeans at intake more quickly and accurately.",
@@ -23,16 +33,16 @@ const testimonials = [
     company: "PB Agrifood",
     subtitle: "",
     image: kateMcintyre,
-    bgImage: nutsMachine,
+    bgImage: soyBg,
   },
   {
     quote: "We are impressed with GoMicro's AI assessment technology. We can now assess the quality of cardamom accurately.",
     name: "Vijeesh Sathyanesan",
     role: "Founder",
-    company: "Connectfarm",
+    company: "ConnectOne Club",
     subtitle: "",
     image: vijeeshSathyanesan,
-    bgImage: fruitsMachine,
+    bgImage: cardamomBg,
   },
 ];
 
@@ -40,12 +50,12 @@ const TestimonialSection = () => {
   return (
     <section className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Testimonials grid - 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        {/* Testimonials grid - 4 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="relative rounded-2xl overflow-hidden h-[320px] group"
+              className="relative rounded-2xl overflow-hidden h-[380px] group"
             >
               {/* Background Image */}
               <div className="absolute inset-0">
@@ -59,29 +69,29 @@ const TestimonialSection = () => {
               
               {/* Quote Card */}
               <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-white/95 backdrop-blur-sm rounded-xl p-5 shadow-lg">
-                  <div className="flex gap-4">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                  <div className="flex gap-3">
                     {/* Quote Text */}
                     <div className="flex-1">
-                      <blockquote className="text-gray-800 text-sm leading-relaxed">
-                        <span className="text-primary text-2xl font-serif leading-none">"</span>
+                      <blockquote className="text-gray-800 text-xs leading-relaxed">
+                        <span className="text-primary text-xl font-serif leading-none">"</span>
                         {testimonial.quote}
-                        <span className="text-primary text-2xl font-serif leading-none">"</span>
+                        <span className="text-primary text-xl font-serif leading-none">"</span>
                       </blockquote>
                     </div>
                     
                     {/* Avatar & Info */}
-                    <div className="flex flex-col items-center text-center min-w-[80px]">
+                    <div className="flex flex-col items-center text-center min-w-[70px]">
                       <img 
                         src={testimonial.image} 
                         alt={testimonial.name} 
-                        className="w-14 h-14 rounded-full object-cover border-2 border-primary/30 mb-2"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-primary/30 mb-2"
                       />
-                      <div className="text-xs font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-[10px] text-gray-600">{testimonial.role}</div>
-                      <div className="text-[10px] text-primary font-medium">{testimonial.company}</div>
+                      <div className="text-[10px] font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="text-[9px] text-gray-600">{testimonial.role}</div>
+                      <div className="text-[9px] text-primary font-medium">{testimonial.company}</div>
                       {testimonial.subtitle && (
-                        <div className="text-[9px] text-gray-500">{testimonial.subtitle}</div>
+                        <div className="text-[8px] text-gray-500">{testimonial.subtitle}</div>
                       )}
                     </div>
                   </div>
