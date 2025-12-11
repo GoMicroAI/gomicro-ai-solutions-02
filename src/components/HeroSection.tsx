@@ -3,7 +3,7 @@ const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center">
       {/* Hero Background Image */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="GoMicro AI Quality Control System" className="w-full h-full object-cover object-center" loading="eager" fetchPriority="high" decoding="async" />
+        <img alt="GoMicro AI Quality Control System" className="w-full h-full object-cover object-center" loading="eager" fetchPriority="high" decoding="async" src="/lovable-uploads/b25b92a4-e494-4fb9-a4ae-63069e23460e.png" />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-background/35 text-primary-foreground" />
       </div>
