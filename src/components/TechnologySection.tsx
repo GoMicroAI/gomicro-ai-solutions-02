@@ -60,7 +60,7 @@ const TechnologySection = () => {
           </div>
 
           {/* Visual - NVIDIA Inception Badge */}
-          <div className="relative flex items-start justify-center lg:justify-end mt-[168px]">
+          <div className="relative flex items-start justify-center lg:justify-end mt-[280px]">
             <div className="rounded-2xl overflow-hidden shadow-2xl w-full max-w-2xl">
               <img
                 src={nvidiaInceptionImg}
