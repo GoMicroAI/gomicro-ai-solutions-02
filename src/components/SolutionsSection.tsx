@@ -41,11 +41,13 @@ const solutions = [{
 
 const SolutionsSection = () => {
   return <section id="solutions" className="py-24 lg:py-32 bg-background">
+      {/* Top separator line */}
+      <div className="w-full h-px bg-border mb-16 lg:mb-24" />
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-12 lg:mb-20">
           <span className="uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground">Quality is a Continuum</span>
-          <h2 className="mt-4 text-lg sm:text-2xl lg:text-3xl font-bold text-primary">See Beyond Human Limits. Deliver Beyond Expectations</h2>
           
           {/* Supply Chain Flow Graphic */}
           <div className="mt-12 flex flex-col items-center">
@@ -80,15 +82,21 @@ const SolutionsSection = () => {
             </div>
           </div>
 
-          <p className="mt-10 text-lg text-muted-foreground">
-            Our AI-powered systems deliver superhuman accuracy across grains, nuts, and fresh produce, 
-            helping you meet the highest quality standards.
-          </p>
-          <Button className="mt-8" asChild>
-            <a href="#contact">Book a Demo</a>
-          </Button>
+          {/* Benefits */}
+          <div className="mt-10 flex flex-wrap justify-center gap-6 md:gap-10">
+            <span className="text-lg md:text-xl font-semibold text-primary">Reduce Rejections</span>
+            <span className="text-muted-foreground">•</span>
+            <span className="text-lg md:text-xl font-semibold text-primary">Speed up your QC</span>
+            <span className="text-muted-foreground">•</span>
+            <span className="text-lg md:text-xl font-semibold text-primary">Reduce QC Cost</span>
+          </div>
         </div>
+      </div>
+      
+      {/* Bottom separator line */}
+      <div className="w-full h-px bg-border mt-16 lg:mt-24" />
 
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24">
         {/* Solutions List - Vertical Stacked */}
         <div className="space-y-16 lg:space-y-24">
           {solutions.map((solution, index) => <div id={solution.id} key={solution.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center scroll-mt-24`}>
