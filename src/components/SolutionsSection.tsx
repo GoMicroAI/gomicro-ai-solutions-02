@@ -144,6 +144,9 @@ const SolutionsSection = () => {
             </div>
           ))}
         </div>
+        
+        {/* Line after Fruits & Vegetables section */}
+        <div className="w-full h-px bg-border mt-16 lg:mt-24" />
       </div>
     </section>;
 };
