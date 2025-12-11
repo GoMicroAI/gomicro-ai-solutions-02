@@ -1,33 +1,38 @@
-import { Quote } from "lucide-react";
 import mikeFeildon from "@/assets/mike-feildon.png";
 import amanpreetSingh from "@/assets/amanpreet-singh.png";
 import kateMcintyre from "@/assets/kate-mcintyre.png";
 import vijeeshSathyanesan from "@/assets/vijeesh-sathyanesan.png";
+import grainsMachine from "@/assets/grains-machine.png";
+import nutsMachine from "@/assets/nuts-machine.png";
+import fruitsMachine from "@/assets/fruits-machine.png";
 
 const testimonials = [
   {
-    quote: "This technology allows us to respond faster to quality issues and consistently meet the high standards expected by our retail partners. It also enables us to look objectively at our quality and consistency.",
-    name: "Mike Feildon",
-    role: "CEO, PM Fresh",
-    image: mikeFeildon,
-  },
-  {
-    quote: "GoMicro Assessor is one of the most reliable technology on repeatability and reproducability.",
+    quote: "We have deployed and integrated a host of technologies and found GoMicro Assessor as one of the most reliable technology on repeatability and reproducibility.",
     name: "Amanpreet Singh",
-    role: "CEO Grain Analyser Ltd.",
+    role: "CEO",
+    company: "Grain Analyser Ltd.",
+    subtitle: "Investor/Advisor-GoMicro",
     image: amanpreetSingh,
+    bgImage: grainsMachine,
   },
   {
-    quote: "GoMicro will allow us to establish the quality of the soybeans at intake more quickly and accurately.",
+    quote: "The technology developed by GoMicro will allow us to establish the quality of the soybeans at intake more quickly and accurately.",
     name: "Kate McIntyre",
-    role: "Field Officer PB Agrifood",
+    role: "Field Officer",
+    company: "PB Agrifood",
+    subtitle: "",
     image: kateMcintyre,
+    bgImage: nutsMachine,
   },
   {
-    quote: "We are impressed with GoMicro's AI assessment technology for accurate assessment of cardamom quality.",
+    quote: "We are impressed with GoMicro's AI assessment technology. We can now assess the quality of cardamom accurately.",
     name: "Vijeesh Sathyanesan",
-    role: "Founder Circular Farms",
+    role: "Founder",
+    company: "Connectfarm",
+    subtitle: "",
     image: vijeeshSathyanesan,
+    bgImage: fruitsMachine,
   },
 ];
 
@@ -35,43 +40,55 @@ const TestimonialSection = () => {
   return (
     <section className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-8">
-            <Quote className="w-8 h-8 text-primary" />
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">What Our Clients Say</h2>
-        </div>
-
-        {/* Testimonials grid - 2 rows */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {/* Testimonials grid - 3 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-card border border-border rounded-2xl p-8 flex flex-col items-center text-center"
+              className="relative rounded-2xl overflow-hidden h-[320px] group"
             >
-              <blockquote className="text-lg font-medium text-foreground leading-relaxed mb-6">
-                "{testimonial.quote}"
-              </blockquote>
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img 
+                  src={testimonial.bgImage} 
+                  alt="" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20" />
+              </div>
               
-              <img 
-                src={testimonial.image} 
-                alt={testimonial.name} 
-                className="w-16 h-16 rounded-full object-cover mb-4"
-              />
-              <div>
-                <div className="font-semibold text-foreground">{testimonial.name}</div>
-                <div className="text-muted-foreground text-sm">{testimonial.role}</div>
+              {/* Quote Card */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl p-5 shadow-lg">
+                  <div className="flex gap-4">
+                    {/* Quote Text */}
+                    <div className="flex-1">
+                      <blockquote className="text-gray-800 text-sm leading-relaxed">
+                        <span className="text-primary text-2xl font-serif leading-none">"</span>
+                        {testimonial.quote}
+                        <span className="text-primary text-2xl font-serif leading-none">"</span>
+                      </blockquote>
+                    </div>
+                    
+                    {/* Avatar & Info */}
+                    <div className="flex flex-col items-center text-center min-w-[80px]">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name} 
+                        className="w-14 h-14 rounded-full object-cover border-2 border-primary/30 mb-2"
+                      />
+                      <div className="text-xs font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="text-[10px] text-gray-600">{testimonial.role}</div>
+                      <div className="text-[10px] text-primary font-medium">{testimonial.company}</div>
+                      {testimonial.subtitle && (
+                        <div className="text-[9px] text-gray-500">{testimonial.subtitle}</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Decorative line */}
-        <div className="mt-16 flex items-center justify-center gap-2">
-          <div className="w-12 h-1 rounded-full bg-primary/30" />
-          <div className="w-4 h-1 rounded-full bg-primary" />
-          <div className="w-12 h-1 rounded-full bg-primary/30" />
         </div>
       </div>
     </section>
