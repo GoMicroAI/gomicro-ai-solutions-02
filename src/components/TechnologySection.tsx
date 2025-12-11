@@ -33,7 +33,7 @@ const TechnologySection = () => {
           <div>
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Technology</span>
             <h2 className="mt-4 text-2xl sm:text-3xl lg:text-5xl font-bold text-white">
-              Cutting-Edge AI Technology
+              Gen AI Technology
             </h2>
             <p className="mt-6 text-lg text-gray-400">
               Our proprietary technology stack combines advanced machine learning, patented hardware, 
@@ -60,12 +60,12 @@ const TechnologySection = () => {
           </div>
 
           {/* Visual - NVIDIA Inception Badge */}
-          <div className="relative flex items-center justify-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative flex items-center justify-center lg:justify-end">
+            <div className="rounded-2xl overflow-hidden shadow-2xl w-full max-w-2xl">
               <img
                 src={nvidiaInceptionImg}
                 alt="NVIDIA Inception Program Member"
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-contain scale-110"
               />
             </div>
           </div>
