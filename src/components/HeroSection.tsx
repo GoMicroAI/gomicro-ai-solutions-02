@@ -14,7 +14,7 @@ const HeroSection = () => {
           <span className="drop-shadow-[0_0_25px_hsl(var(--primary)/0.6)] [text-shadow:_-1px_-1px_0_rgba(255,255,255,0.3),_1px_-1px_0_rgba(255,255,255,0.3),_-1px_1px_0_rgba(255,255,255,0.3),_1px_1px_0_rgba(255,255,255,0.3)] text-white">AI in a Box</span>
         </h1>
         
-        <h2 className="text-sm sm:text-lg md:text-xl text-foreground/90 font-medium lg:text-2xl">
+        <h2 className="text-sm sm:text-lg md:text-xl text-foreground/90 font-medium lg:text-2xl text-left self-start">
           QC Grains, Nuts and Vegetables
         </h2>
         
