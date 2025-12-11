@@ -9,7 +9,7 @@ const technologies = [
   },
   {
     icon: Lightbulb,
-    title: "Patented Imaging",
+    title: "Patented Imaging Technology",
     description: "Proprietary lighting technology ensures consistent image quality across all conditions.",
   },
   {
