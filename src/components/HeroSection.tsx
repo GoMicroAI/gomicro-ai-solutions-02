@@ -15,7 +15,7 @@ const HeroSection = () => {
         </h1>
         
         <h2 className="text-sm sm:text-lg md:text-xl lg:text-3xl text-foreground/90 font-medium">
-          AI Quality Control for Every Commodity
+          QC Grains, Nuts and Vegetables with Super Human Accuracy
         </h2>
         
         <div className="flex-1" />
