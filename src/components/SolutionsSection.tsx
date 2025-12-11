@@ -49,7 +49,7 @@ const SolutionsSection = () => {
 
         {/* Solutions List - Vertical Stacked */}
         <div className="space-y-16 lg:space-y-24">
-          {solutions.map((solution, index) => <div key={solution.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center`}>
+          {solutions.map((solution, index) => <div id={solution.id} key={solution.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center scroll-mt-24`}>
               {/* Image */}
               <div className="w-full lg:w-1/2">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl">

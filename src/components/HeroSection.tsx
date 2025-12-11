@@ -1,5 +1,11 @@
-import heroBg from "@/assets/hero-bg.png";
+import { Wheat, CircleDot, Apple } from "lucide-react";
 import gomicroDevice from "@/assets/gomicro-device.png";
+
+const categoryButtons = [
+  { id: "grains", label: "Grains", icon: Wheat },
+  { id: "nuts", label: "Nuts", icon: CircleDot },
+  { id: "fruits-veg", label: "Vegetables", icon: Apple },
+];
 
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center">
@@ -18,9 +24,21 @@ const HeroSection = () => {
             <span className="drop-shadow-[0_0_25px_hsl(var(--primary)/0.6)] [text-shadow:_-1px_-1px_0_rgba(255,255,255,0.3),_1px_-1px_0_rgba(255,255,255,0.3),_-1px_1px_0_rgba(255,255,255,0.3),_1px_1px_0_rgba(255,255,255,0.3)] text-white">AI in a Box</span>
           </h1>
           
-          <h2 className="text-sm sm:text-lg md:text-xl text-foreground/90 font-medium lg:text-2xl">
-            QC Grains, Nuts and Vegetables
-          </h2>
+          {/* Category Buttons */}
+          <div className="flex flex-wrap gap-4 mt-4">
+            {categoryButtons.map((cat) => (
+              <a
+                key={cat.id}
+                href={`#${cat.id}`}
+                className="flex items-center gap-3 px-4 py-3 rounded-lg border border-primary/40 bg-background/10 backdrop-blur-sm hover:bg-primary/20 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-md border border-primary/50 flex items-center justify-center">
+                  <cat.icon className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-foreground font-medium text-lg">{cat.label}</span>
+              </a>
+            ))}
+          </div>
         </div>
         
         {/* Product Image - Right */}
