@@ -64,22 +64,6 @@ const AboutSection = () => {
                 </p>
               </div>
             </div>
-            
-            {/* Stats */}
-            <div className="absolute -bottom-6 left-2 right-2 sm:left-6 sm:right-6 grid grid-cols-3 gap-2 sm:gap-4">
-              <div className="bg-card rounded-xl p-2 sm:p-4 shadow-lg text-center">
-                <div className="text-lg sm:text-2xl font-bold text-primary">24/7</div>
-                <div className="text-[10px] sm:text-xs text-muted-foreground">Operation</div>
-              </div>
-              <div className="bg-card rounded-xl p-2 sm:p-4 shadow-lg text-center">
-                <div className="text-lg sm:text-2xl font-bold text-primary">100+</div>
-                <div className="text-[10px] sm:text-xs text-muted-foreground">Clients</div>
-              </div>
-              <div className="bg-card rounded-xl p-2 sm:p-4 shadow-lg text-center">
-                <div className="text-lg sm:text-2xl font-bold text-primary">5M+</div>
-                <div className="text-[10px] sm:text-xs text-muted-foreground">Items Inspected</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
