@@ -33,7 +33,7 @@ const TechnologySection = () => {
           <div>
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Technology</span>
             <h2 className="mt-4 text-2xl sm:text-3xl lg:text-5xl font-bold text-white">
-              Gen AI Technology
+              Cutting Edge Gen AI Technology
             </h2>
             <p className="mt-6 text-lg text-gray-400">
               Our proprietary technology stack combines advanced machine learning, patented hardware, 
