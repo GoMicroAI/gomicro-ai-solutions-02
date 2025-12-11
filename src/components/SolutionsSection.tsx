@@ -1,8 +1,15 @@
-import { Wheat, Apple, CircleDot, CheckCircle } from "lucide-react";
+import { Wheat, Apple, CircleDot, CheckCircle, Tractor, Warehouse, Truck, Box, ArrowRight, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import grainsMachine from "@/assets/grains-machine.png";
 import nutsMachine from "@/assets/nuts-machine.png";
 import fruitsMachine from "@/assets/fruits-machine.png";
+
+const supplyChainSteps = [
+  { icon: Tractor, label: "Farm" },
+  { icon: Warehouse, label: "Pack House" },
+  { icon: Truck, label: "Distribution" },
+];
+
 const solutions = [{
   id: "grains",
   icon: Wheat,
@@ -31,14 +38,49 @@ const solutions = [{
   image: fruitsMachine,
   imageAlt: "GoMicro AI fruits and vegetables quality assessment machine"
 }];
+
 const SolutionsSection = () => {
   return <section id="solutions" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-20">
-          <span className="uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground">Solutions</span>
+        <div className="text-center max-w-4xl mx-auto mb-12 lg:mb-20">
+          <span className="uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground">Quality is a Continuum</span>
           <h2 className="mt-4 text-lg sm:text-2xl lg:text-3xl font-bold text-primary">See Beyond Human Limits. Deliver Beyond Expectations</h2>
-          <p className="mt-6 text-lg text-muted-foreground">
+          
+          {/* Supply Chain Flow Graphic */}
+          <div className="mt-12 flex flex-col items-center">
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+              {supplyChainSteps.map((step, index) => (
+                <div key={step.label} className="flex items-center gap-4 md:gap-6">
+                  {/* Step Card */}
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="relative">
+                      {/* Location Icon */}
+                      <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border-2 border-primary/40 bg-background flex items-center justify-center">
+                        <step.icon className="w-10 h-10 md:w-12 md:h-12 text-primary stroke-[1.5]" />
+                      </div>
+                      {/* AI Box with fruit being QC'd */}
+                      <div className="absolute -bottom-3 -right-3 flex items-center">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg border-2 border-primary bg-background flex items-center justify-center relative">
+                          <Cpu className="w-5 h-5 md:w-6 md:h-6 text-primary stroke-[1.5]" />
+                          <Box className="w-3 h-3 md:w-4 md:h-4 text-primary/70 stroke-[1.5] absolute -top-1 -left-1" />
+                        </div>
+                      </div>
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-foreground">{step.label}</span>
+                    <span className="text-xs text-primary font-semibold">AI in a BOX</span>
+                  </div>
+                  
+                  {/* Arrow between steps */}
+                  {index < supplyChainSteps.length - 1 && (
+                    <ArrowRight className="w-6 h-6 md:w-8 md:h-8 text-primary/50 stroke-[1.5] flex-shrink-0" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-10 text-lg text-muted-foreground">
             Our AI-powered systems deliver superhuman accuracy across grains, nuts, and fresh produce, 
             helping you meet the highest quality standards.
           </p>
