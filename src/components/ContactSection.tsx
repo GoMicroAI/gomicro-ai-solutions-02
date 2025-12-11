@@ -66,21 +66,28 @@ const ContactSection = () => {
                   <div className="font-medium text-foreground group-hover:text-primary transition-colors">
                     Suite 9, T8Tonsley<br />
                     6 MAB Eastern Promenade<br />
-                    Tonsley SA 5042
+                    Tonsley SA 5042<br />
+                    Australia
                   </div>
                 </div>
               </a>
 
-              {/* LinkedIn Link */}
+              {/* LinkedIn Button */}
               <a 
                 href="https://www.linkedin.com/company/gomicro/posts/?feedView=all" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 mt-4 px-5 py-3 bg-[#0A66C2] hover:bg-[#004182] rounded-xl transition-colors text-white"
+                className="flex items-center gap-4 group"
               >
-                <Linkedin className="w-6 h-6" />
-                <span className="font-medium">Follow us on LinkedIn</span>
+                <div className="w-12 h-12 rounded-xl bg-[#0A66C2] flex items-center justify-center flex-shrink-0 group-hover:bg-[#004182] transition-colors">
+                  <Linkedin className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-sm text-muted-foreground">Social</div>
+                  <span className="font-medium text-foreground group-hover:text-primary transition-colors">Follow us on LinkedIn</span>
+                </div>
               </a>
+
             </div>
           </div>
 
