@@ -15,7 +15,7 @@ const HeroSection = () => {
         </h1>
         
         <h2 className="text-sm sm:text-lg md:text-xl lg:text-3xl text-foreground/90 font-medium">
-          QC Grains, Nuts and Vegetables with Super Human Accuracy
+          QC Grains, Nuts and Vegetables
         </h2>
         
         <div className="flex-1" />
