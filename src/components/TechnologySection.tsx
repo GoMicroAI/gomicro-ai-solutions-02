@@ -1,5 +1,5 @@
 import { Cpu, Lightbulb, Zap, Layers } from "lucide-react";
-import nvidiaInceptionImg from "@/assets/nvidia-inception.jpeg";
+import nvidiaInceptionImg from "@/assets/nvidia-inception-badge.jpg";
 
 const technologies = [
   {
@@ -60,12 +60,12 @@ const TechnologySection = () => {
           </div>
 
           {/* Visual - NVIDIA Inception Badge */}
-          <div className="relative flex items-start justify-center lg:justify-end pt-[140px]">
+          <div className="relative flex items-start justify-center lg:justify-end mt-[168px]">
             <div className="rounded-2xl overflow-hidden shadow-2xl w-full max-w-2xl">
               <img
                 src={nvidiaInceptionImg}
                 alt="NVIDIA Inception Program Member"
-                className="w-full h-auto object-contain scale-110"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
