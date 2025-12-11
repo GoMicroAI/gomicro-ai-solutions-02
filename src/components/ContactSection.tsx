@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, Linkedin } from "lucide-react";
+import { Mail, MapPin, Send, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
@@ -52,30 +52,24 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">Phone</div>
-                  <a href="tel:+61882345678" className="font-medium text-foreground hover:text-primary transition-colors">
-                    +61 8 8234 5678
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
+              <a 
+                href="https://share.google/8rt0eWcEsW8iqF0XJ" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group"
+              >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Address</div>
-                  <div className="font-medium text-foreground">
-                    Tonsley Innovation Precinct<br />
-                    South Australia
+                  <div className="font-medium text-foreground group-hover:text-primary transition-colors">
+                    Suite 9, T8Tonsley<br />
+                    6 MAB Eastern Promenade<br />
+                    Tonsley SA 5042
                   </div>
                 </div>
-              </div>
+              </a>
 
               {/* LinkedIn Link */}
               <a 
