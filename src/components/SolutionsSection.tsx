@@ -98,42 +98,51 @@ const SolutionsSection = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24">
         {/* Solutions List - Vertical Stacked */}
-        <div className="space-y-16 lg:space-y-24">
-          {solutions.map((solution, index) => <div id={solution.id} key={solution.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center scroll-mt-24`}>
-              {/* Image */}
-              <div className="w-full lg:w-1/2">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                  <img src={solution.image} alt={solution.imageAlt} className="w-full h-auto object-contain" />
-                  {/* Subtle overlay for cohesion */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="w-full lg:w-1/2">
-                {/* Icon */}
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/20 mb-6">
-                  <solution.icon className="w-7 h-7 text-primary" />
+        <div className="space-y-0">
+          {solutions.map((solution, index) => (
+            <div key={solution.id}>
+              <div id={solution.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center scroll-mt-24 py-16 lg:py-24`}>
+                {/* Image */}
+                <div className="w-full lg:w-1/2">
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                    <img src={solution.image} alt={solution.imageAlt} className="w-full h-auto object-contain" />
+                    {/* Subtle overlay for cohesion */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                  </div>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">{solution.title}</h3>
-                <p className="text-primary font-medium text-lg mb-4">{solution.subtitle}</p>
-                <p className="text-muted-foreground text-lg mb-8">{solution.description}</p>
+                {/* Content */}
+                <div className="w-full lg:w-1/2">
+                  {/* Icon */}
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/20 mb-6">
+                    <solution.icon className="w-7 h-7 text-primary" />
+                  </div>
 
-                {/* Features */}
-                <ul className="space-y-4 mb-8">
-                  {solution.features.map((feature, i) => <li key={i} className="flex items-start gap-3">
-                      <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-foreground">{feature}</span>
-                    </li>)}
-                </ul>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">{solution.title}</h3>
+                  <p className="text-primary font-medium text-lg mb-4">{solution.subtitle}</p>
+                  <p className="text-muted-foreground text-lg mb-8">{solution.description}</p>
 
-                {/* CTA */}
-                <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
-                  <a href="#contact">Learn More</a>
-                </Button>
+                  {/* Features */}
+                  <ul className="space-y-4 mb-8">
+                    {solution.features.map((feature, i) => <li key={i} className="flex items-start gap-3">
+                        <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground">{feature}</span>
+                      </li>)}
+                  </ul>
+
+                  {/* CTA */}
+                  <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
+                    <a href="#contact">Learn More</a>
+                  </Button>
+                </div>
               </div>
-            </div>)}
+              
+              {/* Separator line between sections */}
+              {index < solutions.length - 1 && (
+                <div className="w-full h-px bg-border" />
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>;
