@@ -66,8 +66,7 @@ const ContactSection = () => {
                   <div className="font-medium text-foreground group-hover:text-primary transition-colors">
                     Suite 9, T8Tonsley<br />
                     6 MAB Eastern Promenade<br />
-                    Tonsley SA 5042<br />
-                    Australia
+                    Tonsley SA 5042
                   </div>
                 </div>
               </a>
