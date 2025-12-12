@@ -1,5 +1,4 @@
 import { Wheat, CircleDot, Apple } from "lucide-react";
-import gomicroDevice from "@/assets/gomicro-device.png";
 
 const categoryButtons = [
   { id: "grains", label: "Grains", icon: Wheat },
@@ -46,15 +45,6 @@ const HeroSection = () => {
               </a>
             ))}
           </div>
-        </div>
-        
-        {/* Product Image - Right */}
-        <div className="flex-shrink-0 animate-fade-in-up">
-          <img 
-            src={gomicroDevice} 
-            alt="GoMicro Device" 
-            className="w-64 sm:w-80 md:w-96 lg:w-[450px] h-auto object-contain"
-          />
         </div>
       </div>
       
