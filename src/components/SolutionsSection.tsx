@@ -2,7 +2,7 @@ import { Wheat, Apple, CircleDot, CheckCircle, Tractor, Warehouse, Truck, Box, A
 import { Button } from "@/components/ui/button";
 import grainsMachine from "@/assets/grains-machine.png";
 import nutsMachine from "@/assets/nuts-machine.png";
-import fruitsMachine from "@/assets/fruits-machine.png";
+import spinachQc from "@/assets/spinach-qc.jpeg";
 
 const supplyChainSteps = [
   { icon: Tractor, label: "Farm" },
@@ -35,7 +35,7 @@ const solutions = [{
   subtitle: "Green Leaves, Berries, Tomatoes",
   description: "Advanced inspection for fresh produce to ensure consistent quality.",
   features: ["Defect Assessment (to meet trading standards)", "Varietal Assessment", "Freshness Analysis"],
-  image: fruitsMachine,
+  image: spinachQc,
   imageAlt: "GoMicro AI fruits and vegetables quality assessment machine"
 }];
 
