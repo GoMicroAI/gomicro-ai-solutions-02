@@ -22,8 +22,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            <img src={logo} alt="GoMicro" className="h-16 lg:h-12 w-auto" />
-            <span className="font-bold text-foreground hidden sm:block text-2xl">GoMicro AI </span>
+            <span className="font-bold text-foreground text-2xl">GoMicro AI </span>
           </a>
 
           {/* Desktop Navigation */}
