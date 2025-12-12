@@ -57,6 +57,9 @@ const TestimonialSection = () => {
   return (
     <section className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+          What our users say
+        </h2>
         <Carousel
           opts={{
             align: "start",
