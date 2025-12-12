@@ -1,4 +1,5 @@
-import { Wheat, Apple, CircleDot, CheckCircle, Tractor, Warehouse, Truck, Box, ArrowRight, Cpu } from "lucide-react";
+import { Wheat, Apple, CheckCircle, Tractor, Warehouse, Truck, Box, ArrowRight, Cpu } from "lucide-react";
+import AlmondIcon from "@/components/icons/AlmondIcon";
 import { Button } from "@/components/ui/button";
 import grainsMachine from "@/assets/grains-machine.png";
 import nutsMachine from "@/assets/nuts-machine.png";
@@ -21,7 +22,7 @@ const solutions = [{
   imageAlt: "GoMicro AI grain quality assessment machine"
 }, {
   id: "nuts",
-  icon: CircleDot,
+  icon: AlmondIcon,
   title: "Nuts QC Assessment",
   subtitle: "Almonds",
   description: "USDA-standard compliant defect assessment with top & bottom inspection.",
