@@ -46,49 +46,51 @@ const SolutionsSection = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-28">
-          <span className="uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground">Quality is a Continuum</span>
+        <div className="text-center mx-auto mb-16 lg:mb-28 flex flex-col items-center">
+          <span className="uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground inline-block">Quality is a Continuum</span>
           
-          {/* Supply Chain Flow Graphic */}
-          <div className="mt-16 lg:mt-20 flex flex-col items-center">
-            <div className="flex flex-wrap justify-between items-center w-full">
+          {/* Supply Chain Flow Graphic - matches heading width */}
+          <div className="mt-16 lg:mt-20 w-full max-w-[600px]">
+            <div className="flex justify-between items-center w-full">
               {supplyChainSteps.map((step, index) => (
                 <div key={step.label} className="flex items-center">
                   {/* Step Card */}
-                  <div className="flex flex-col items-center gap-4">
+                  <div className="flex flex-col items-center gap-3">
                     <div className="relative">
                       {/* Location Icon */}
-                      <div className="w-24 h-24 md:w-28 md:h-28 rounded-2xl border-2 border-primary/40 bg-background flex items-center justify-center">
-                        <step.icon className="w-12 h-12 md:w-14 md:h-14 text-primary stroke-[1.5]" />
+                      <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border-2 border-primary/40 bg-background flex items-center justify-center">
+                        <step.icon className="w-10 h-10 md:w-12 md:h-12 text-primary stroke-[1.5]" />
                       </div>
                       {/* AI Box with fruit being QC'd */}
-                      <div className="absolute -bottom-4 -right-4 flex items-center">
-                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg border-2 border-primary bg-background flex items-center justify-center relative">
-                          <Cpu className="w-6 h-6 md:w-7 md:h-7 text-primary stroke-[1.5]" />
-                          <Box className="w-4 h-4 md:w-5 md:h-5 text-primary/70 stroke-[1.5] absolute -top-1 -left-1" />
+                      <div className="absolute -bottom-3 -right-3 flex items-center">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg border-2 border-primary bg-background flex items-center justify-center relative">
+                          <Cpu className="w-5 h-5 md:w-6 md:h-6 text-primary stroke-[1.5]" />
+                          <Box className="w-3 h-3 md:w-4 md:h-4 text-primary/70 stroke-[1.5] absolute -top-1 -left-1" />
                         </div>
                       </div>
                     </div>
-                    <span className="text-base md:text-lg font-medium text-foreground mt-2">{step.label}</span>
-                    <span className="text-sm text-primary font-semibold">AI in a BOX</span>
+                    <span className="text-sm md:text-base font-medium text-foreground mt-2">{step.label}</span>
+                    <span className="text-xs text-primary font-semibold">AI in a BOX</span>
                   </div>
                   
                   {/* Arrow between steps */}
                   {index < supplyChainSteps.length - 1 && (
-                    <ArrowRight className="w-8 h-8 md:w-10 md:h-10 text-primary/50 stroke-[1.5] flex-shrink-0 mx-4 md:mx-6" />
+                    <ArrowRight className="w-6 h-6 md:w-8 md:h-8 text-primary/50 stroke-[1.5] flex-shrink-0 mx-2 md:mx-4" />
                   )}
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Benefits */}
-          <div className="mt-16 lg:mt-20 flex flex-wrap justify-between items-center w-full">
-            <span className="text-lg md:text-xl font-semibold text-primary">Reduce Rejections</span>
-            <span className="text-muted-foreground">•</span>
-            <span className="text-lg md:text-xl font-semibold text-primary">Speed up your QC</span>
-            <span className="text-muted-foreground">•</span>
-            <span className="text-lg md:text-xl font-semibold text-primary">Reduce QC Cost</span>
+          {/* Benefits - matches heading width */}
+          <div className="mt-14 lg:mt-16 w-full max-w-[600px]">
+            <div className="flex justify-between items-center w-full">
+              <span className="text-base md:text-lg font-semibold text-primary">Reduce Rejections</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-base md:text-lg font-semibold text-primary">Speed up your QC</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-base md:text-lg font-semibold text-primary">Reduce QC Cost</span>
+            </div>
           </div>
         </div>
       </div>
