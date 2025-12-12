@@ -59,15 +59,12 @@ const TechnologySection = () => {
             </div>
           </div>
 
-          {/* Visual - Product Video */}
+          {/* Visual - NVIDIA Inception Badge */}
           <div className="relative flex items-start justify-center lg:justify-end mt-[280px]">
             <div className="rounded-2xl overflow-hidden shadow-2xl w-full max-w-2xl">
-              <video
-                src="/videos/box-video.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
+              <img
+                src={nvidiaInceptionImg}
+                alt="NVIDIA Inception Program Member"
                 className="w-full h-auto object-contain"
               />
             </div>
