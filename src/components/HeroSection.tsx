@@ -15,6 +15,7 @@ const HeroSection = () => {
           autoPlay 
           muted 
           playsInline
+          loop={false}
           className="w-full h-full object-cover object-center"
         >
           <source src="/videos/hero-video.mp4" type="video/mp4" />
