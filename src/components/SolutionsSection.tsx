@@ -50,11 +50,11 @@ const SolutionsSection = () => {
           {/* New Heading - Benefits */}
           <div className="w-full max-w-[600px]">
             <div className="flex justify-between items-center w-full">
-              <span className="uppercase tracking-wider text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-foreground">Reduce Rejections</span>
-              <span className="text-primary-foreground text-2xl sm:text-3xl lg:text-4xl font-extrabold">•</span>
-              <span className="uppercase tracking-wider text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-foreground">Speed up your QC</span>
-              <span className="text-primary-foreground text-2xl sm:text-3xl lg:text-4xl font-extrabold">•</span>
-              <span className="uppercase tracking-wider text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-foreground">Reduce QC Cost</span>
+              <span className="text-base md:text-lg font-semibold text-primary">Reduce Rejections</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-base md:text-lg font-semibold text-primary">Speed up your QC</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-base md:text-lg font-semibold text-primary">Reduce QC Cost</span>
             </div>
           </div>
           
@@ -92,7 +92,7 @@ const SolutionsSection = () => {
           </div>
 
           {/* Subheading - Quality is a Continuum */}
-          <span className="mt-14 lg:mt-16 text-base md:text-lg font-semibold text-primary inline-block">Quality is a Continuum</span>
+          <span className="mt-14 lg:mt-16 uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground inline-block">Quality is a Continuum</span>
         </div>
       </div>
       
