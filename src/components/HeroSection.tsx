@@ -1,4 +1,5 @@
 import { Wheat, CircleDot, Apple } from "lucide-react";
+import spinachQc from "@/assets/spinach-qc.jpeg";
 
 const categoryButtons = [
   { id: "grains", label: "Grains", icon: Wheat },
@@ -45,6 +46,15 @@ const HeroSection = () => {
               </a>
             ))}
           </div>
+        </div>
+
+        {/* Image - Right */}
+        <div className="hidden lg:block flex-1 max-w-lg">
+          <img 
+            src={spinachQc} 
+            alt="GoMicro Spinach QC System" 
+            className="w-full h-auto rounded-xl shadow-2xl"
+          />
         </div>
       </div>
       
