@@ -1,8 +1,9 @@
-import { Wheat, CircleDot, Apple } from "lucide-react";
+import { Wheat, Apple } from "lucide-react";
+import AlmondIcon from "@/components/icons/AlmondIcon";
 
 const categoryButtons = [
   { id: "grains", label: "Grains", icon: Wheat },
-  { id: "nuts", label: "Nuts", icon: CircleDot },
+  { id: "nuts", label: "Nuts", icon: AlmondIcon },
   { id: "fruits-veg", label: "Vegetables", icon: Apple },
 ];
 
