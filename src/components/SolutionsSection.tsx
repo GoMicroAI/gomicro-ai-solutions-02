@@ -47,9 +47,18 @@ const SolutionsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mx-auto mb-16 lg:mb-28 flex flex-col items-center">
-          <span className="uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground inline-block">Quality is a Continuum</span>
+          {/* New Heading - Benefits */}
+          <div className="w-full max-w-[600px]">
+            <div className="flex justify-between items-center w-full">
+              <span className="text-base md:text-lg font-semibold text-primary">Reduce Rejections</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-base md:text-lg font-semibold text-primary">Speed up your QC</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-base md:text-lg font-semibold text-primary">Reduce QC Cost</span>
+            </div>
+          </div>
           
-          {/* Supply Chain Flow Graphic - matches heading width */}
+          {/* Supply Chain Flow Graphic */}
           <div className="mt-16 lg:mt-20 w-full max-w-[600px]">
             <div className="flex justify-between items-center w-full">
               {supplyChainSteps.map((step, index) => (
@@ -82,16 +91,8 @@ const SolutionsSection = () => {
             </div>
           </div>
 
-          {/* Benefits - matches heading width */}
-          <div className="mt-14 lg:mt-16 w-full max-w-[600px]">
-            <div className="flex justify-between items-center w-full">
-              <span className="text-base md:text-lg font-semibold text-primary">Reduce Rejections</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-base md:text-lg font-semibold text-primary">Speed up your QC</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-base md:text-lg font-semibold text-primary">Reduce QC Cost</span>
-            </div>
-          </div>
+          {/* Subheading - Quality is a Continuum */}
+          <span className="mt-14 lg:mt-16 uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground inline-block">Quality is a Continuum</span>
         </div>
       </div>
       
