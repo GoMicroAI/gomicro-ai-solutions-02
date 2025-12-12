@@ -46,25 +46,25 @@ const SolutionsSection = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-5xl mx-auto mb-16 lg:mb-28">
+        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-28">
           <span className="uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground">Quality is a Continuum</span>
           
           {/* Supply Chain Flow Graphic */}
           <div className="mt-16 lg:mt-20 flex flex-col items-center">
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24">
+            <div className="flex flex-wrap justify-between items-center w-full">
               {supplyChainSteps.map((step, index) => (
-                <div key={step.label} className="flex items-center gap-8 md:gap-16 lg:gap-24">
+                <div key={step.label} className="flex items-center">
                   {/* Step Card */}
                   <div className="flex flex-col items-center gap-4">
                     <div className="relative">
                       {/* Location Icon */}
-                      <div className="w-26 h-26 md:w-32 md:h-32 rounded-2xl border-2 border-primary/40 bg-background flex items-center justify-center">
-                        <step.icon className="w-13 h-13 md:w-16 md:h-16 text-primary stroke-[1.5]" />
+                      <div className="w-24 h-24 md:w-28 md:h-28 rounded-2xl border-2 border-primary/40 bg-background flex items-center justify-center">
+                        <step.icon className="w-12 h-12 md:w-14 md:h-14 text-primary stroke-[1.5]" />
                       </div>
                       {/* AI Box with fruit being QC'd */}
                       <div className="absolute -bottom-4 -right-4 flex items-center">
-                        <div className="w-13 h-13 md:w-16 md:h-16 rounded-lg border-2 border-primary bg-background flex items-center justify-center relative">
-                          <Cpu className="w-6 h-6 md:w-8 md:h-8 text-primary stroke-[1.5]" />
+                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg border-2 border-primary bg-background flex items-center justify-center relative">
+                          <Cpu className="w-6 h-6 md:w-7 md:h-7 text-primary stroke-[1.5]" />
                           <Box className="w-4 h-4 md:w-5 md:h-5 text-primary/70 stroke-[1.5] absolute -top-1 -left-1" />
                         </div>
                       </div>
@@ -75,7 +75,7 @@ const SolutionsSection = () => {
                   
                   {/* Arrow between steps */}
                   {index < supplyChainSteps.length - 1 && (
-                    <ArrowRight className="w-8 h-8 md:w-10 md:h-10 text-primary/50 stroke-[1.5] flex-shrink-0" />
+                    <ArrowRight className="w-8 h-8 md:w-10 md:h-10 text-primary/50 stroke-[1.5] flex-shrink-0 mx-4 md:mx-6" />
                   )}
                 </div>
               ))}
@@ -83,7 +83,7 @@ const SolutionsSection = () => {
           </div>
 
           {/* Benefits */}
-          <div className="mt-16 lg:mt-20 flex flex-wrap justify-center gap-8 md:gap-14">
+          <div className="mt-16 lg:mt-20 flex flex-wrap justify-between items-center w-full">
             <span className="text-lg md:text-xl font-semibold text-primary">Reduce Rejections</span>
             <span className="text-muted-foreground">•</span>
             <span className="text-lg md:text-xl font-semibold text-primary">Speed up your QC</span>
