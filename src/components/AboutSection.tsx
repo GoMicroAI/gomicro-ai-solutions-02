@@ -45,11 +45,14 @@ const AboutSection = () => {
 
           {/* Visual */}
           <div className="relative">
-          <div style={{
-            backgroundImage: "url(\"/lovable-uploads/da278507-e8f1-4585-8407-d2e1318e4f00.png\")",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center top'
-          }} className="aspect-[4/3] rounded-3xl overflow-hidden flex items-start justify-center relative">
+          <div className="aspect-[4/3] rounded-3xl overflow-hidden flex items-start justify-center relative bg-muted">
+              <img 
+                src="/lovable-uploads/da278507-e8f1-4585-8407-d2e1318e4f00.png" 
+                alt="GoMicro team" 
+                className="absolute inset-0 w-full h-full object-cover object-top"
+                loading="lazy"
+                decoding="async"
+              />
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-transparent" />
               

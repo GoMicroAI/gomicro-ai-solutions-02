@@ -9,13 +9,15 @@ const categoryButtons = [
 
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-20">
-      {/* Hero Background Video */}
+      {/* Hero Background Video - Optimized */}
       <div className="absolute inset-0">
         <video 
           autoPlay 
           muted 
           playsInline
           loop={false}
+          preload="metadata"
+          poster="/lovable-uploads/b25b92a4-e494-4fb9-a4ae-63069e23460e.png"
           className="w-full h-full object-cover object-[center_30%] sm:object-center"
         >
           <source src="/videos/hero-video.mp4" type="video/mp4" />

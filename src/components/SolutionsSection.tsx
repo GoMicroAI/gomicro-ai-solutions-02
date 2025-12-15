@@ -131,7 +131,13 @@ const SolutionsSection = () => {
                 {/* Image */}
                 <div className="w-full lg:w-1/2">
                   <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                    <img src={solution.image} alt={solution.imageAlt} className="w-full h-auto object-contain" />
+                    <img 
+                      src={solution.image} 
+                      alt={solution.imageAlt} 
+                      className="w-full h-auto object-contain" 
+                      loading="lazy"
+                      decoding="async"
+                    />
                     {/* Subtle overlay for cohesion */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                   </div>
