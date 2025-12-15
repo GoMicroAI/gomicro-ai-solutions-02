@@ -34,8 +34,11 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button size="lg" asChild>
+          <div className="flex items-center gap-2">
+            <Button size="sm" className="lg:hidden" asChild>
+              <a href="#contact">Book Demo</a>
+            </Button>
+            <Button size="lg" className="hidden lg:inline-flex" asChild>
               <a href="#contact">Book a Demo</a>
             </Button>
           </div>
