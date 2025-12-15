@@ -75,26 +75,26 @@ const SolutionsSection = () => {
                   <div className="flex flex-col items-center gap-3 group">
                     <div className="relative">
                       {/* Location Icon */}
-                      <div className="w-24 h-24 md:w-28 md:h-28 rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center transition-all duration-300 group-hover:border-primary/60 group-hover:shadow-lg group-hover:shadow-primary/10">
-                        <step.icon className="w-12 h-12 md:w-14 md:h-14 text-primary stroke-[1.5] transition-transform duration-300 group-hover:scale-110" />
+                      <div className="w-28 h-28 md:w-36 md:h-36 rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center transition-all duration-300 group-hover:border-primary/60 group-hover:shadow-lg group-hover:shadow-primary/10">
+                        <step.icon className="w-14 h-14 md:w-18 md:h-18 text-primary stroke-[1.5] transition-transform duration-300 group-hover:scale-110" />
                       </div>
                       {/* AI Box with fruit being QC'd */}
-                      <div className="absolute -bottom-3 -right-3 flex items-center">
-                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl border-2 border-primary bg-primary/10 backdrop-blur-sm flex items-center justify-center relative shadow-md">
-                          <Cpu className="w-6 h-6 md:w-7 md:h-7 text-primary stroke-[1.5]" />
-                          <Box className="w-4 h-4 md:w-5 md:h-5 text-primary/80 stroke-[1.5] absolute -top-1.5 -left-1.5" />
+                      <div className="absolute -bottom-4 -right-4 flex items-center">
+                        <div className="w-14 h-14 md:w-18 md:h-18 rounded-xl border-2 border-primary bg-primary/10 backdrop-blur-sm flex items-center justify-center relative shadow-md">
+                          <Cpu className="w-7 h-7 md:w-9 md:h-9 text-primary stroke-[1.5]" />
+                          <Box className="w-5 h-5 md:w-6 md:h-6 text-primary/80 stroke-[1.5] absolute -top-2 -left-2" />
                         </div>
                       </div>
                     </div>
-                    <span className="text-base md:text-lg font-semibold text-foreground mt-3">{step.label}</span>
-                    <span className="text-xs md:text-sm text-primary font-bold uppercase tracking-wider">AI in a BOX</span>
+                    <span className="text-lg md:text-xl font-semibold text-foreground mt-4">{step.label}</span>
+                    <span className="text-sm md:text-base text-primary font-bold uppercase tracking-wider">AI in a BOX</span>
                   </div>
                   
                   {/* Animated Arrow between steps */}
                   {index < supplyChainSteps.length - 1 && (
-                    <div className="flex items-center mx-3 md:mx-6">
-                      <div className="w-8 md:w-12 h-0.5 bg-gradient-to-r from-primary/60 to-primary/20" />
-                      <ArrowRight className="w-6 h-6 md:w-8 md:h-8 text-primary stroke-[2] flex-shrink-0 -ml-1" />
+                    <div className="flex items-center mx-4 md:mx-8">
+                      <div className="w-10 md:w-16 h-0.5 bg-gradient-to-r from-primary/60 to-primary/20" />
+                      <ArrowRight className="w-8 h-8 md:w-10 md:h-10 text-primary stroke-[2] flex-shrink-0 -ml-1" />
                     </div>
                   )}
                 </div>
@@ -103,16 +103,16 @@ const SolutionsSection = () => {
           </div>
 
           {/* Benefits Pills */}
-          <div className="mt-16 lg:mt-20 w-full max-w-[800px]">
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-              <div className="px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
-                <span className="text-base md:text-lg font-semibold text-primary">Reduce Rejections</span>
+          <div className="mt-16 lg:mt-20 w-full max-w-[900px]">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+              <div className="px-8 py-4 rounded-full bg-primary/10 border border-primary/20">
+                <span className="text-lg md:text-xl font-semibold text-primary">Reduce Rejections</span>
               </div>
-              <div className="px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
-                <span className="text-base md:text-lg font-semibold text-primary">Speed up your QC</span>
+              <div className="px-8 py-4 rounded-full bg-primary/10 border border-primary/20">
+                <span className="text-lg md:text-xl font-semibold text-primary">Speed up your QC</span>
               </div>
-              <div className="px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
-                <span className="text-base md:text-lg font-semibold text-primary">Reduce QC Cost</span>
+              <div className="px-8 py-4 rounded-full bg-primary/10 border border-primary/20">
+                <span className="text-lg md:text-xl font-semibold text-primary">Reduce QC Cost</span>
               </div>
             </div>
           </div>
