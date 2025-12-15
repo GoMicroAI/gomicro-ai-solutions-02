@@ -37,7 +37,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Sending contact email for:", email);
 
     const emailResponse = await resend.emails.send({
-      from: "GoMicro Contact Form <onboarding@resend.dev>",
+      from: "GoMicro Contact Form <noreply@gomicro.ai>",
       to: ["sivam@gomicro.ai", "colab@gomicro.ai"],
       subject: `Demo Request from ${firstName} ${lastName} - ${company}`,
       html: `
