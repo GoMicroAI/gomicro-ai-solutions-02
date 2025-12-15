@@ -17,16 +17,25 @@ interface ContactEmailRequest {
 }
 
 const handler = async (req: Request): Promise<Response> => {
+  // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { firstName, lastName, email, company, message }: ContactEmailRequest = await req.json();
+    const body = await req.text();
+    if (!body) {
+      console.error("Empty request body received");
+      return new Response(
+        JSON.stringify({ error: "Empty request body" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    const { firstName, lastName, email, company, message }: ContactEmailRequest = JSON.parse(body);
 
     console.log("Sending contact email for:", email);
 
-    // Send to both emails
     const emailResponse = await resend.emails.send({
       from: "GoMicro Contact Form <onboarding@resend.dev>",
       to: ["sivam@gomicro.ai", "colab@gomicro.ai"],
@@ -42,7 +51,11 @@ const handler = async (req: Request): Promise<Response> => {
       reply_to: email,
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    console.log("Resend response:", JSON.stringify(emailResponse));
+
+    if (emailResponse.error) {
+      throw new Error(emailResponse.error.message);
+    }
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
