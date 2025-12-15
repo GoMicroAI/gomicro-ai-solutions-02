@@ -48,49 +48,72 @@ const SolutionsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mx-auto mb-16 lg:mb-28 flex flex-col items-center">
-          <span className="uppercase tracking-wider text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground inline-block">Quality is a Continuum</span>
+          {/* Enhanced Title */}
+          <div className="relative">
+            <h2 className="uppercase tracking-widest text-4xl sm:text-5xl lg:text-7xl font-black text-foreground inline-block">
+              Quality is a{" "}
+              <span className="text-primary relative">
+                Continuum
+                <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/30" viewBox="0 0 200 12" preserveAspectRatio="none">
+                  <path d="M0,6 Q50,0 100,6 T200,6" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+                </svg>
+              </span>
+            </h2>
+          </div>
           
-          {/* Supply Chain Flow Graphic - matches heading width */}
-          <div className="mt-16 lg:mt-20 w-full max-w-[600px]">
+          {/* Subtitle */}
+          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl">
+            AI-powered quality assessment at every stage of your supply chain
+          </p>
+          
+          {/* Supply Chain Flow Graphic */}
+          <div className="mt-16 lg:mt-24 w-full max-w-[700px]">
             <div className="flex justify-between items-center w-full">
               {supplyChainSteps.map((step, index) => (
                 <div key={step.label} className="flex items-center">
                   {/* Step Card */}
-                  <div className="flex flex-col items-center gap-3">
+                  <div className="flex flex-col items-center gap-3 group">
                     <div className="relative">
                       {/* Location Icon */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border-2 border-primary/40 bg-background flex items-center justify-center">
-                        <step.icon className="w-10 h-10 md:w-12 md:h-12 text-primary stroke-[1.5]" />
+                      <div className="w-24 h-24 md:w-28 md:h-28 rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center transition-all duration-300 group-hover:border-primary/60 group-hover:shadow-lg group-hover:shadow-primary/10">
+                        <step.icon className="w-12 h-12 md:w-14 md:h-14 text-primary stroke-[1.5] transition-transform duration-300 group-hover:scale-110" />
                       </div>
                       {/* AI Box with fruit being QC'd */}
                       <div className="absolute -bottom-3 -right-3 flex items-center">
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg border-2 border-primary bg-background flex items-center justify-center relative">
-                          <Cpu className="w-5 h-5 md:w-6 md:h-6 text-primary stroke-[1.5]" />
-                          <Box className="w-3 h-3 md:w-4 md:h-4 text-primary/70 stroke-[1.5] absolute -top-1 -left-1" />
+                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl border-2 border-primary bg-primary/10 backdrop-blur-sm flex items-center justify-center relative shadow-md">
+                          <Cpu className="w-6 h-6 md:w-7 md:h-7 text-primary stroke-[1.5]" />
+                          <Box className="w-4 h-4 md:w-5 md:h-5 text-primary/80 stroke-[1.5] absolute -top-1.5 -left-1.5" />
                         </div>
                       </div>
                     </div>
-                    <span className="text-sm md:text-base font-medium text-foreground mt-2">{step.label}</span>
-                    <span className="text-xs text-primary font-semibold">AI in a BOX</span>
+                    <span className="text-base md:text-lg font-semibold text-foreground mt-3">{step.label}</span>
+                    <span className="text-xs md:text-sm text-primary font-bold uppercase tracking-wider">AI in a BOX</span>
                   </div>
                   
-                  {/* Arrow between steps */}
+                  {/* Animated Arrow between steps */}
                   {index < supplyChainSteps.length - 1 && (
-                    <ArrowRight className="w-6 h-6 md:w-8 md:h-8 text-primary/50 stroke-[1.5] flex-shrink-0 mx-2 md:mx-4" />
+                    <div className="flex items-center mx-3 md:mx-6">
+                      <div className="w-8 md:w-12 h-0.5 bg-gradient-to-r from-primary/60 to-primary/20" />
+                      <ArrowRight className="w-6 h-6 md:w-8 md:h-8 text-primary stroke-[2] flex-shrink-0 -ml-1" />
+                    </div>
                   )}
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Benefits - matches heading width */}
-          <div className="mt-14 lg:mt-16 w-full max-w-[600px]">
-            <div className="flex justify-between items-center w-full">
-              <span className="text-base md:text-lg font-semibold text-primary">Reduce Rejections</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-base md:text-lg font-semibold text-primary">Speed up your QC</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-base md:text-lg font-semibold text-primary">Reduce QC Cost</span>
+          {/* Benefits Pills */}
+          <div className="mt-16 lg:mt-20 w-full max-w-[800px]">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <div className="px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
+                <span className="text-base md:text-lg font-semibold text-primary">Reduce Rejections</span>
+              </div>
+              <div className="px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
+                <span className="text-base md:text-lg font-semibold text-primary">Speed up your QC</span>
+              </div>
+              <div className="px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
+                <span className="text-base md:text-lg font-semibold text-primary">Reduce QC Cost</span>
+              </div>
             </div>
           </div>
         </div>
