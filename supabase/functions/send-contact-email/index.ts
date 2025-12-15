@@ -26,10 +26,10 @@ const handler = async (req: Request): Promise<Response> => {
     const body = await req.text();
     if (!body) {
       console.error("Empty request body received");
-      return new Response(
-        JSON.stringify({ error: "Empty request body" }),
-        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
-      );
+      return new Response(JSON.stringify({ error: "Empty request body" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
     }
 
     const { firstName, lastName, email, company, message }: ContactEmailRequest = JSON.parse(body);
@@ -38,7 +38,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "GoMicro Contact Form <noreply@gomicro.ai>",
-      to: ["sivam@gomicro.ai", "colab@gomicro.ai"],
+      to: ["sivam@gomicro.ai", "colab@gomicro.ai", "manojai0909@gmail.com"],
       subject: `Demo Request from ${firstName} ${lastName} - ${company}`,
       html: `
         <h2>New Demo Request</h2>
@@ -63,10 +63,10 @@ const handler = async (req: Request): Promise<Response> => {
     });
   } catch (error: any) {
     console.error("Error sending email:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
-    );
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json", ...corsHeaders },
+    });
   }
 };
 
