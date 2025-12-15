@@ -4,23 +4,49 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Send, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+
+      if (error) throw error;
+
       toast({
         title: "Demo Request Received!",
         description: "We'll get back to you within 24 hours.",
       });
-    }, 1500);
+      setFormData({ firstName: "", lastName: "", email: "", company: "", message: "" });
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -99,13 +125,13 @@ const ContactSection = () => {
                   <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
                     First Name
                   </label>
-                  <Input id="firstName" placeholder="John" required />
+                  <Input id="firstName" placeholder="John" required value={formData.firstName} onChange={handleChange} />
                 </div>
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
                     Last Name
                   </label>
-                  <Input id="lastName" placeholder="Doe" required />
+                  <Input id="lastName" placeholder="Doe" required value={formData.lastName} onChange={handleChange} />
                 </div>
               </div>
 
@@ -113,14 +139,14 @@ const ContactSection = () => {
                 <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                   Work Email
                 </label>
-                <Input id="email" type="email" placeholder="john@company.com" required />
+                <Input id="email" type="email" placeholder="john@company.com" required value={formData.email} onChange={handleChange} />
               </div>
 
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
                   Company
                 </label>
-                <Input id="company" placeholder="Company Name" required />
+                <Input id="company" placeholder="Company Name" required value={formData.company} onChange={handleChange} />
               </div>
 
               <div>
@@ -132,6 +158,8 @@ const ContactSection = () => {
                   placeholder="Tell us about your quality control needs..."
                   rows={4}
                   required
+                  value={formData.message}
+                  onChange={handleChange}
                 />
               </div>
 
