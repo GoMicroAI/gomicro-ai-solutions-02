@@ -1,4 +1,14 @@
 import { ArrowRight, ExternalLink } from "lucide-react";
+import press1 from "@/assets/press-1.png";
+import press2 from "@/assets/press-2.png";
+import press3 from "@/assets/press-3.png";
+import press4 from "@/assets/press-4.png";
+import press5 from "@/assets/press-5.png";
+import press6 from "@/assets/press-6.png";
+import press7 from "@/assets/press-7.png";
+import press8 from "@/assets/press-8.png";
+import press9 from "@/assets/press-9.png";
+import press10 from "@/assets/press-10.png";
 
 const pressArticles = [
   {
@@ -8,7 +18,7 @@ const pressArticles = [
     teaser: "Fruitnet highlights GoMicro's AI-in-a-Box assessing leafy green quality on conveyor belts at commercial scale.",
     url: "https://www.fruitnet.com/produce-plus/boratto-farms-leverages-ai-for-leafy-green-quality-assessment-with-gomicro/268922.article",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>FRUITNET</text></svg>",
-    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop"
+    image: press1
   },
   {
     headline: "Allowing farmers and harvesters to convert what they have got into digitally tradeable goods will be a game changer",
@@ -17,7 +27,7 @@ const pressArticles = [
     teaser: "GoMicro discusses turning quality signals into consistent, shareable data that reduces disputes and rejection risk across the supply chain.",
     url: "https://www.freshplaza.com/north-america/article/9663076/allowing-farmers-and-harvesters-to-convert-what-they-have-got-into-digitally-tradeable-goods-will-be-a-game-changer/",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 620 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>FreshPlaza</text></svg>",
-    image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop"
+    image: press2
   },
   {
     headline: "How AI is helping green leaf quality assessment",
@@ -26,7 +36,7 @@ const pressArticles = [
     teaser: "Coverage of GoMicro's approach to standardising leafy-green QC with objective, verifiable assessments.",
     url: "https://www.hortidaily.com/article/9657938/how-ai-is-helping-green-leaf-quality-assessment/",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>HortiDaily</text></svg>",
-    image: "https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=400&h=300&fit=crop"
+    image: press3
   },
   {
     headline: "GoMicro AI tech enhances leafy green quality assessment",
@@ -35,7 +45,7 @@ const pressArticles = [
     teaser: "Fruitnet reports on GoMicro's AI-powered inspection improving speed, consistency, and freshness outcomes for leafy greens.",
     url: "https://www.fruitnet.com/produce-plus/gomicro-ai-tech-enhances-leafy-green-quality-assessment/262288.article",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>FRUITNET</text></svg>",
-    image: "https://images.unsplash.com/photo-1518843875459-f738682238a6?w=400&h=300&fit=crop"
+    image: press4
   },
   {
     headline: "GoMicro revolutionizes strawberry quality assessment with AI",
@@ -44,7 +54,7 @@ const pressArticles = [
     teaser: "HortiDaily covers GoMicro's AI strawberry assessment progress and how it supports consistent quality decisions.",
     url: "https://www.hortidaily.com/article/9631490/gomicro-revolutionizes-strawberry-quality-assessment-with-ai/",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>HortiDaily</text></svg>",
-    image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=400&h=300&fit=crop"
+    image: press5
   },
   {
     headline: "GoMicro AI web app live for five Australian crops",
@@ -53,7 +63,7 @@ const pressArticles = [
     teaser: "Grain Central reports on GoMicro's free web app enabling growers to assess defects in major crops via phone images.",
     url: "https://www.graincentral.com/ag-tech/gomicro-ai-web-app-live-for-five-australian-crops/",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>Grain Central</text></svg>",
-    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop"
+    image: press6
   },
   {
     headline: "Briefs: Grain Detective in pipeline; Intersales buys CadMac",
@@ -62,7 +72,7 @@ const pressArticles = [
     teaser: "Grain Central covers GoMicro teaming with WALCO Engineering on Grain Detective, an AI-powered auto-sampling device for in-flow grain assessment.",
     url: "https://www.graincentral.com/news/briefs-grain-detective-in-pipeline-intersales-buys-cadmac/",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>Grain Central</text></svg>",
-    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop"
+    image: press7
   },
   {
     headline: "Briefs: Changes for AgriChain, Agridry, GoMicro",
@@ -71,7 +81,7 @@ const pressArticles = [
     teaser: "Agribusiness briefs including GoMicro's MoU with AICRAFT to support AI assessment deployments in harsh environments.",
     url: "https://www.graincentral.com/news/agribusiness/briefs-changes-for-agrichain-agridry-gomicro/",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>Grain Central</text></svg>",
-    image: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=300&fit=crop"
+    image: press8
   },
   {
     headline: "India prepares for Aussie-developed AI grain assessment tool",
@@ -80,7 +90,7 @@ const pressArticles = [
     teaser: "Farming Ahead covers GoMicro's phone-based AI grain assessment being selected for use in India through Grain Analyser.",
     url: "https://www.farmingahead.com.au/cropping/news-articles/1463686/india-prepares-aussie-developed-ai-grain-assessment-tool",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>Farming Ahead</text></svg>",
-    image: "https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?w=400&h=300&fit=crop"
+    image: press9
   },
   {
     headline: "New grain assessment app could revolutionise grain quality assessment",
@@ -89,7 +99,7 @@ const pressArticles = [
     teaser: "The Land reports on GoMicro's grain assessment app in testing and its potential to modernise quality checks.",
     url: "https://www.theland.com.au/story/8476217/new-grain-assessment-app-could-revolutionise-grain-quality-assessment/",
     logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='900' fill='currentColor'>THE LAND</text></svg>",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=300&fit=crop"
+    image: press10
   }
 ];
 
