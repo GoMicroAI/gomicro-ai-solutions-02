@@ -66,6 +66,8 @@ const TechnologySection = () => {
                 src={nvidiaInceptionImg}
                 alt="NVIDIA Inception Program Member"
                 className="w-full h-auto object-contain"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

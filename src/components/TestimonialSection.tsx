@@ -49,6 +49,8 @@ const TestimonialSection = () => {
                     src={testimonial.image} 
                     alt={testimonial.alt}
                     className="w-full h-auto object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </CarouselItem>
