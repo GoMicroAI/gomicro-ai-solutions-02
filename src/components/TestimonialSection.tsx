@@ -34,16 +34,16 @@ const TestimonialSection = () => {
           }}
           plugins={[
             Autoplay({
-              delay: 1000,
+              delay: 3000,
               stopOnInteraction: false,
               stopOnMouseEnter: true,
             }),
           ]}
-          className="w-full max-w-7xl mx-auto"
+          className="w-full max-w-[1400px] mx-auto"
         >
-          <CarouselContent className="-ml-6">
+          <CarouselContent className="-ml-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-6 md:basis-1/2 lg:basis-1/2">
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/20 transition-transform duration-300 hover:scale-[1.02]">
                   <img 
                     src={testimonial.image} 
