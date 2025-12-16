@@ -40,7 +40,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "GoMicro Careers <noreply@gomicro.ai>",
-      to: ["sivam@gomicro.ai", "manojai0909@gmail.com"],
+      to: ["sivam@gomicro.ai"],
       subject: `Internship Application from ${name}`,
       html: `
         <h2>New Internship Application</h2>
