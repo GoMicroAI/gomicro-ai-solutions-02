@@ -2,3 +2,6 @@ project_id = "pennoegiczubxhgaopjf"
 
 [functions.send-contact-email]
 verify_jwt = false
+
+[functions.send-internship-email]
+verify_jwt = false

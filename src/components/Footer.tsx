@@ -60,6 +60,11 @@ const Footer = () => {
                   Contact
                 </a>
               </li>
+              <li>
+                <a href="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                  Careers
+                </a>
+              </li>
             </ul>
           </div>
         </div>
