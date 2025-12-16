@@ -1,7 +1,14 @@
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  const getNavHref = (section: string) => {
+    return isHomePage ? `#${section}` : `/#${section}`;
+  };
 
   return (
     <footer className="bg-card border-t border-border py-16">
@@ -9,10 +16,10 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           {/* Brand */}
           <div className="col-span-2">
-            <div className="flex items-center gap-3 mb-4">
+            <Link to="/" className="flex items-center gap-3 mb-4">
               <img src={logo} alt="GoMicro" className="h-10 w-auto" />
               <span className="text-xl font-bold">GoMicro</span>
-            </div>
+            </Link>
             <p className="text-muted-foreground max-w-md">
               AI-first company developing cutting-edge AI solutions for the Agricultural Industry. 
               Super Human QC for grains, nuts, and fresh produce.
@@ -24,17 +31,17 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Solutions</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={getNavHref("solutions")} className="text-muted-foreground hover:text-primary transition-colors">
                   Grains
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={getNavHref("solutions")} className="text-muted-foreground hover:text-primary transition-colors">
                   Nuts
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={getNavHref("solutions")} className="text-muted-foreground hover:text-primary transition-colors">
                   Fruits & Vegetables
                 </a>
               </li>
@@ -46,24 +53,24 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={getNavHref("about")} className="text-muted-foreground hover:text-primary transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#technology" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={getNavHref("technology")} className="text-muted-foreground hover:text-primary transition-colors">
                   Technology
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={getNavHref("contact")} className="text-muted-foreground hover:text-primary transition-colors">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/careers" className="text-muted-foreground hover:text-primary transition-colors">
                   Careers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
