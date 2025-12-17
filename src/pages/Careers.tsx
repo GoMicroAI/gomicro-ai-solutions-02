@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,6 +12,10 @@ import { Upload, Briefcase, Users, Lightbulb, TrendingUp, Brain, Megaphone, Cog 
 const Careers = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [formData, setFormData] = useState({
     name: "",
