@@ -11,7 +11,7 @@ const categoryButtons = [
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-20">
       {/* Hero Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black">
         <img 
           src={heroBackground}
           alt="GoMicro AI in a BOX device"
@@ -19,8 +19,10 @@ const HeroSection = () => {
           loading="eager"
           decoding="async"
         />
+        {/* Side gradients to blend into black */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black" />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-background/25" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
       
       {/* Content Container */}
