@@ -1,5 +1,6 @@
 import { Wheat, Apple } from "lucide-react";
 import AlmondIcon from "@/components/icons/AlmondIcon";
+import { useState, useEffect, useRef } from "react";
 
 const categoryButtons = [
   { id: "grains", label: "Grains", icon: Wheat },
@@ -8,20 +9,48 @@ const categoryButtons = [
 ];
 
 const HeroSection = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Delay video loading until after initial paint
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Handle video loaded
+  useEffect(() => {
+    if (shouldLoadVideo && videoRef.current) {
+      videoRef.current.load();
+    }
+  }, [shouldLoadVideo]);
+
   return <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-20">
       {/* Hero Background Video - Optimized */}
       <div className="absolute inset-0">
-        <video 
-          autoPlay 
-          muted 
-          playsInline
-          loop={false}
-          preload="metadata"
-          poster="/lovable-uploads/b25b92a4-e494-4fb9-a4ae-63069e23460e.png"
-          className="w-full h-full object-cover object-[center_30%] sm:object-center"
-        >
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
-        </video>
+        {/* Poster image shown immediately */}
+        <img 
+          src="/lovable-uploads/b25b92a4-e494-4fb9-a4ae-63069e23460e.png"
+          alt=""
+          className={`absolute inset-0 w-full h-full object-cover object-[center_30%] sm:object-center transition-opacity duration-500 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}
+        />
+        {shouldLoadVideo && (
+          <video 
+            ref={videoRef}
+            autoPlay 
+            muted 
+            playsInline
+            loop={false}
+            preload="auto"
+            onCanPlay={() => setVideoLoaded(true)}
+            className={`w-full h-full object-cover object-[center_30%] sm:object-center transition-opacity duration-500 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <source src="/videos/hero-video.mp4" type="video/mp4" />
+          </video>
+        )}
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-background/35 text-primary-foreground" />
       </div>
