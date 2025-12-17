@@ -1,5 +1,6 @@
 import { Wheat, Apple } from "lucide-react";
 import AlmondIcon from "@/components/icons/AlmondIcon";
+import heroBackground from "@/assets/hero-background.png";
 
 const categoryButtons = [
   { id: "grains", label: "Grains", icon: Wheat },
@@ -9,21 +10,17 @@ const categoryButtons = [
 
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-20">
-      {/* Hero Background Video - Optimized */}
+      {/* Hero Background Image */}
       <div className="absolute inset-0">
-        <video 
-          autoPlay 
-          muted 
-          playsInline
-          loop={false}
-          preload="metadata"
-          poster="/lovable-uploads/b25b92a4-e494-4fb9-a4ae-63069e23460e.png"
-          className="w-full h-full object-cover object-[center_30%] sm:object-center"
-        >
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
-        </video>
+        <img 
+          src={heroBackground}
+          alt="GoMicro AI in a BOX device"
+          className="w-full h-full object-cover object-center"
+          loading="eager"
+          decoding="async"
+        />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-background/35 text-primary-foreground" />
+        <div className="absolute inset-0 bg-background/25" />
       </div>
       
       {/* Content Container */}
