@@ -5,52 +5,57 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Send, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-
 const ContactSection = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     company: "",
-    message: "",
+    message: ""
   });
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
+      const {
+        error
+      } = await supabase.functions.invoke("send-contact-email", {
+        body: formData
       });
-
       if (error) throw error;
-
       toast({
         title: "Demo Request Received!",
-        description: "We'll get back to you within 24 hours.",
+        description: "We'll get back to you within 24 hours."
       });
-      setFormData({ firstName: "", lastName: "", email: "", company: "", message: "" });
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        message: ""
+      });
     } catch (error: any) {
       console.error("Error submitting form:", error);
       toast({
         title: "Error",
         description: "Failed to send request. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section id="contact" className="py-24 lg:py-32 bg-background">
+  return <section id="contact" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Contact Info */}
@@ -72,18 +77,13 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Email</div>
-                  <a href="mailto:info@gomicro.ai" className="font-medium text-foreground hover:text-primary transition-colors">
-                    info@gomicro.ai
+                  <a className="font-medium text-foreground hover:text-primary transition-colors" href="mailto:sivam@gomicro.ai">
+                    sivam@gomicro.ai
                   </a>
                 </div>
               </div>
 
-              <a 
-                href="https://share.google/8rt0eWcEsW8iqF0XJ" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 group"
-              >
+              <a href="https://share.google/8rt0eWcEsW8iqF0XJ" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
@@ -98,12 +98,7 @@ const ContactSection = () => {
               </a>
 
               {/* LinkedIn Button */}
-              <a 
-                href="https://www.linkedin.com/company/gomicro/posts/?feedView=all" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 group"
-              >
+              <a href="https://www.linkedin.com/company/gomicro/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-xl bg-[#0A66C2] flex items-center justify-center flex-shrink-0 group-hover:bg-[#004182] transition-colors">
                   <Linkedin className="w-6 h-6 text-white" />
                 </div>
@@ -153,32 +148,19 @@ const ContactSection = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                   Message
                 </label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Tell us about your quality control needs..."
-                  rows={4}
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                />
+                <Textarea id="message" placeholder="Tell us about your quality control needs..." rows={4} required value={formData.message} onChange={handleChange} />
               </div>
 
               <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? (
-                  "Submitting..."
-                ) : (
-                  <>
+                {isSubmitting ? "Submitting..." : <>
                     Send Request
                     <Send className="w-4 h-4 ml-2" />
-                  </>
-                )}
+                  </>}
               </Button>
             </form>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
