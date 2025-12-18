@@ -82,7 +82,7 @@ const HeroSection = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-foreground leading-tight mb-4 min-h-[1.2em]">
             <span 
               key={currentTextIndex}
-              className={`drop-shadow-[0_0_25px_hsl(var(--primary)/0.6)] [text-shadow:_-1px_-1px_0_rgba(255,255,255,0.3),_1px_-1px_0_rgba(255,255,255,0.3),_-1px_1px_0_rgba(255,255,255,0.3),_1px_1px_0_rgba(255,255,255,0.3)] text-white block ${isAnimating ? 'animate-fade-in' : ''} ${currentTextIndex < 2 ? 'text-[0.5em]' : ''}`}
+              className={`drop-shadow-[0_0_25px_hsl(var(--primary)/0.6)] [text-shadow:_-1px_-1px_0_rgba(255,255,255,0.3),_1px_-1px_0_rgba(255,255,255,0.3),_-1px_1px_0_rgba(255,255,255,0.3),_1px_1px_0_rgba(255,255,255,0.3)] text-white block ${isAnimating ? 'animate-fade-in' : ''}`}
             >
               {scrollingTexts[currentTextIndex]}
             </span>
