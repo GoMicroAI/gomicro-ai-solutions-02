@@ -42,27 +42,8 @@ const SolutionsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mx-auto mb-16 lg:mb-28 flex flex-col items-center">
-          {/* Enhanced Title */}
-          <div className="relative">
-            <h2 className="uppercase tracking-widest text-4xl sm:text-5xl lg:text-7xl font-black text-foreground inline-block">
-              Quality is a{" "}
-              <span className="text-primary relative">
-                Continuum
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/30" viewBox="0 0 200 12" preserveAspectRatio="none">
-                  <path d="M0,6 Q50,0 100,6 T200,6" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
-                </svg>
-              </span>
-            </h2>
-          </div>
-          
-          {/* Subtitle */}
-          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl">
-            AI-powered quality assessment at every stage of your supply chain
-          </p>
-          
-
           {/* Benefits Cards */}
-          <div className="mt-16 lg:mt-24 w-full max-w-[1100px]">
+          <div className="w-full max-w-[1100px]">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {/* Reduce Rejections */}
               <div className="group relative px-8 py-8 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 border-2 border-primary/30 shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/50 hover:scale-105 transition-all duration-300 cursor-default">
