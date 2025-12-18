@@ -22,6 +22,15 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+      {/* Scrolling Banner */}
+      <div className="bg-primary text-primary-foreground py-1.5 overflow-hidden">
+        <div className="animate-scroll-banner whitespace-nowrap">
+          <span className="inline-block px-4 text-sm font-semibold tracking-wide">
+            Super Human QC with AI in a Box • Super Human QC with AI in a Box • Super Human QC with AI in a Box • Super Human QC with AI in a Box • Super Human QC with AI in a Box •
+          </span>
+        </div>
+      </div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
