@@ -266,23 +266,27 @@ const Careers = () => {
                       <Label htmlFor="resume" className="mb-2 block">
                         Resume <span className="text-destructive">*</span>
                       </Label>
-                      <div className="relative">
-                        <Input
+                      <div className="flex items-center gap-3">
+                        <label
+                          htmlFor="resume"
+                          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary/10 text-primary rounded-lg text-sm font-medium cursor-pointer hover:bg-primary/20 transition-colors border border-primary/20"
+                        >
+                          <Upload className="w-4 h-4" />
+                          Choose File
+                        </label>
+                        <span className="text-sm text-muted-foreground truncate max-w-[200px]">
+                          {resumeFile ? resumeFile.name : "No file chosen"}
+                        </span>
+                        <input
                           id="resume"
                           name="resume"
                           type="file"
                           accept=".pdf,.doc,.docx"
                           onChange={handleFileChange}
-                          className="bg-background file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
+                          className="sr-only"
                         />
-                        {resumeFile && (
-                          <p className="text-sm text-muted-foreground mt-2 flex items-center gap-2">
-                            <Upload className="w-4 h-4" />
-                            {resumeFile.name}
-                          </p>
-                        )}
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1">
+                      <p className="text-xs text-muted-foreground mt-2">
                         PDF or Word document, max 5MB
                       </p>
                     </div>
