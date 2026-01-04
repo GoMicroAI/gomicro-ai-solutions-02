@@ -75,15 +75,6 @@ const pressArticles = [
     image: press7
   },
   {
-    headline: "Briefs: Changes for AgriChain, Agridry, GoMicro",
-    outlet: "Grain Central",
-    date: "13 Feb 2024",
-    teaser: "Agribusiness briefs including GoMicro's MoU with AICRAFT to support AI assessment deployments in harsh environments.",
-    url: "https://www.graincentral.com/news/agribusiness/briefs-changes-for-agrichain-agridry-gomicro/",
-    logoSvg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 80'><text x='0' y='55' font-family='Inter, Arial, sans-serif' font-size='54' font-weight='800' fill='currentColor'>Grain Central</text></svg>",
-    image: press8
-  },
-  {
     headline: "India prepares for Aussie-developed AI grain assessment tool",
     outlet: "Farming Ahead",
     date: "12 Jan 2024",
