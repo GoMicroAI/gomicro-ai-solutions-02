@@ -24,10 +24,12 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       {/* Scrolling Banner */}
       <div className="bg-primary text-primary-foreground py-1.5 overflow-hidden">
-        <div className="animate-scroll-banner whitespace-nowrap">
-          <span className="inline-block px-4 text-sm font-semibold tracking-wide">
-            Super Human QC with AI in a Box • Super Human QC with AI in a Box • Super Human QC with AI in a Box • Super Human QC with AI in a Box • Super Human QC with AI in a Box •
-          </span>
+        <div className="flex animate-scroll-banner">
+          {[...Array(2)].map((_, i) => (
+            <span key={i} className="flex-shrink-0 px-4 text-sm font-semibold tracking-wide whitespace-nowrap">
+              Super Human QC with AI in a Box • Grains Quality Control • Nuts Quality Control • Fruits & Vegetables Quality Control •&nbsp;
+            </span>
+          ))}
         </div>
       </div>
       
