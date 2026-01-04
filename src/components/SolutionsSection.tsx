@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import grainsMachine from "@/assets/grains-machine.png";
 import nutsMachine from "@/assets/nuts-machine.png";
 import spinachQc from "@/assets/spinach-qc.jpeg";
+import aiQcSolutions from "@/assets/ai-qc-solutions.png";
 
 const solutions = [{
   id: "grains",
@@ -78,6 +79,22 @@ const SolutionsSection = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Our AI QC Solutions Section */}
+        <div className="mt-20 lg:mt-28">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-foreground mb-12 lg:mb-16">
+            Our AI QC Solutions
+          </h2>
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img 
+              src={aiQcSolutions} 
+              alt="GoMicro AI QC Solutions - Almond Assessor, On-belt Veg Assessor, Grain Quality Assessor, Green Leaf Assessor" 
+              className="w-full h-auto object-contain"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
