@@ -1,6 +1,7 @@
 import { Wheat, Apple } from "lucide-react";
 import AlmondIcon from "@/components/icons/AlmondIcon";
 import { useState, useEffect, useRef } from "react";
+import heroProduct from "@/assets/hero-product.png";
 
 const categoryButtons = [
   { id: "grains", label: "Grains", icon: Wheat },
@@ -33,7 +34,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         {/* Poster image shown immediately */}
         <img 
-          src="/lovable-uploads/b25b92a4-e494-4fb9-a4ae-63069e23460e.png"
+          src={heroProduct}
           alt=""
           className={`absolute inset-0 w-full h-full object-cover object-[center_30%] sm:object-center transition-opacity duration-500 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}
         />
