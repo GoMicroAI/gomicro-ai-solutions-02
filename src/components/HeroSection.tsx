@@ -35,12 +35,12 @@ const HeroSection = () => {
               <a
                 key={cat.id}
                 href={`#${cat.id}`}
-                className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-primary/40 bg-background/10 backdrop-blur-sm hover:bg-primary/20 transition-colors"
+                className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-primary/60 bg-primary/20 backdrop-blur-md hover:bg-primary/30 transition-colors"
               >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-primary/50 flex items-center justify-center">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-primary/70 bg-primary/15 flex items-center justify-center">
                   <cat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                 </div>
-                <span className="text-foreground font-medium text-base sm:text-lg">{cat.label}</span>
+                <span className="text-white font-medium text-base sm:text-lg">{cat.label}</span>
               </a>
             ))}
           </div>
