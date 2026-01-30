@@ -26,6 +26,7 @@ jobs:
       - run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
+          git pull origin main --rebase
           git add dist
-          git commit -m "auto build dist"
+          git commit -m "auto build dist" || echo "no changes"
           git push
