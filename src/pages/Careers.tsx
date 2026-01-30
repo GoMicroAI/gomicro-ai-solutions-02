@@ -8,6 +8,7 @@ import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Upload, Briefcase, Users, Lightbulb, TrendingUp, Brain, Megaphone, Cog } from "lucide-react";
+import heroProduct from "@/assets/hero-product.png";
 
 const Careers = () => {
   const { toast } = useToast();
@@ -158,14 +159,25 @@ const Careers = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative">
+      {/* Background Image with Blur */}
+      <div className="fixed inset-0 z-0">
+        <img 
+          src={heroProduct}
+          alt=""
+          className="w-full h-full object-cover object-[center_30%] sm:object-center blur-sm scale-105"
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-background/70" />
+      </div>
+
       <Header />
       
-      <main className="pt-32 md:pt-36 pb-16">
+      <main className="relative z-10 pt-32 md:pt-36 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 drop-shadow-lg">
               Internship Program
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -178,7 +190,7 @@ const Careers = () => {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
+                className="bg-card/95 backdrop-blur-md border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 shadow-lg"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <benefit.icon className="w-6 h-6 text-primary" />
@@ -191,7 +203,7 @@ const Careers = () => {
 
           {/* Main Content - Form and Description */}
           <div className="max-w-6xl mx-auto">
-            <div className="bg-card rounded-2xl border border-border shadow-lg overflow-hidden">
+            <div className="bg-card/95 backdrop-blur-md rounded-2xl border-2 border-primary/20 shadow-2xl shadow-black/20 overflow-hidden">
               <div className="grid lg:grid-cols-2">
                 {/* Left Side - Form */}
                 <div className="p-8 lg:p-12">
