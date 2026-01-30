@@ -151,17 +151,17 @@ const JoinDemo = () => {
 
               {/* Feature Pills */}
               <div className="flex flex-wrap justify-center gap-4 mb-10">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30 shadow-md">
-                  <Clock className="w-5 h-5 text-primary" />
-                  <span className="text-foreground font-medium">30 minutes</span>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/90 backdrop-blur-sm border border-primary shadow-md">
+                  <Clock className="w-5 h-5 text-primary-foreground" />
+                  <span className="text-primary-foreground font-medium">30 minutes</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30 shadow-md">
-                  <Monitor className="w-5 h-5 text-primary" />
-                  <span className="text-foreground font-medium">Live demo</span>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/90 backdrop-blur-sm border border-primary shadow-md">
+                  <Monitor className="w-5 h-5 text-primary-foreground" />
+                  <span className="text-primary-foreground font-medium">Live demo</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30 shadow-md">
-                  <MessageCircle className="w-5 h-5 text-primary" />
-                  <span className="text-foreground font-medium">Q&A session</span>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/90 backdrop-blur-sm border border-primary shadow-md">
+                  <MessageCircle className="w-5 h-5 text-primary-foreground" />
+                  <span className="text-primary-foreground font-medium">Q&A session</span>
                 </div>
               </div>
             </div>
