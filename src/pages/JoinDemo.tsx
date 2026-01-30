@@ -125,13 +125,6 @@ const JoinDemo = () => {
               <img src={logo} alt="GoMicro" className="h-10 sm:h-12 w-auto" />
               <span className="font-bold text-foreground text-lg sm:text-2xl">GoMicro AI</span>
             </Link>
-            <Link
-              to="/"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Home
-            </Link>
           </div>
         </div>
       </header>
