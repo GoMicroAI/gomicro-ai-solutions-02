@@ -22,6 +22,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo.png";
 import heroProduct from "@/assets/hero-product.png";
 
@@ -80,14 +81,19 @@ const JoinDemo = () => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      // For now, just show success - can integrate with backend later
-      console.log("Demo registration:", data);
+      const { error } = await supabase.functions.invoke('send-demo-email', {
+        body: data,
+      });
+
+      if (error) throw error;
+
       toast({
         title: "Registration Successful!",
         description: "We'll send you the demo details to your email shortly.",
       });
       form.reset();
     } catch (error) {
+      console.error("Error submitting demo registration:", error);
       toast({
         title: "Something went wrong",
         description: "Please try again later.",
