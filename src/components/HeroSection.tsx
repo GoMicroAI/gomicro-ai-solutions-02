@@ -47,19 +47,19 @@ const HeroSection = () => {
             ))}
           </div>
 
-          {/* Join Demo Button with Animation */}
+          {/* Join Demo Button with Border Light Animation */}
           <div className="mt-6 sm:mt-8">
-            <Link to="/joindemo">
+            <Link to="/joindemo" className="group relative inline-block">
+              {/* Animated border wrapper */}
+              <div className="absolute -inset-[2px] rounded-xl bg-gradient-to-r from-white/10 via-white/60 to-white/10 bg-[length:200%_100%] animate-border-light opacity-80" />
               <Button 
                 size="lg" 
-                className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 animate-pulse hover:animate-none"
+                className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center gap-2 sm:gap-3">
                   <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
                   Join Our Next Online Demo
                 </span>
-                {/* Shine effect */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </Button>
             </Link>
           </div>
