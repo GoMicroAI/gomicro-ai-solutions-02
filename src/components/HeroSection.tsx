@@ -1,5 +1,7 @@
-import { Wheat, Apple } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Wheat, Apple, Play } from "lucide-react";
 import AlmondIcon from "@/components/icons/AlmondIcon";
+import { Button } from "@/components/ui/button";
 import heroProduct from "@/assets/hero-product.png";
 
 const categoryButtons = [
@@ -43,6 +45,23 @@ const HeroSection = () => {
                 <span className="text-white font-medium text-base sm:text-lg">{cat.label}</span>
               </a>
             ))}
+          </div>
+
+          {/* Join Demo Button with Animation */}
+          <div className="mt-6 sm:mt-8">
+            <Link to="/joindemo">
+              <Button 
+                size="lg" 
+                className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 animate-pulse hover:animate-none"
+              >
+                <span className="relative z-10 flex items-center gap-2 sm:gap-3">
+                  <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
+                  Join Our Next Online Demo
+                </span>
+                {/* Shine effect */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

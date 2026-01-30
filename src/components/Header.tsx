@@ -57,7 +57,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button size="lg" asChild>
-              <a href={getNavHref("contact")}>Book a Demo</a>
+              <Link to="/joindemo">Book a Demo</Link>
             </Button>
           </div>
 
@@ -86,7 +86,7 @@ const Header = () => {
                 </a>
               ))}
               <Button className="mt-2" asChild>
-                <a href={getNavHref("contact")}>Book a Demo</a>
+                <Link to="/joindemo" onClick={() => setIsMenuOpen(false)}>Book a Demo</Link>
               </Button>
             </nav>
           </div>
