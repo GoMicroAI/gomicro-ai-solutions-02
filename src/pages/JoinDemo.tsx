@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
+import heroProduct from "@/assets/hero-product.png";
 
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50),
@@ -98,9 +99,20 @@ const JoinDemo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative">
+      {/* Background Image with Blur */}
+      <div className="fixed inset-0 z-0">
+        <img 
+          src={heroProduct}
+          alt=""
+          className="w-full h-full object-cover object-[center_30%] sm:object-center blur-sm scale-105"
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-background/70" />
+      </div>
+
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link to="/" className="flex items-center gap-3">
@@ -119,12 +131,12 @@ const JoinDemo = () => {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24 lg:pt-28 pb-16">
+      <main className="relative z-10 pt-24 lg:pt-28 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             {/* Hero Section */}
             <div className="text-center mb-10">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 drop-shadow-lg">
                 Join Our Next Online Demo
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
@@ -133,23 +145,23 @@ const JoinDemo = () => {
 
               {/* Feature Pills */}
               <div className="flex flex-wrap justify-center gap-4 mb-10">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30 shadow-md">
                   <Clock className="w-5 h-5 text-primary" />
                   <span className="text-foreground font-medium">30 minutes</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30 shadow-md">
                   <Monitor className="w-5 h-5 text-primary" />
                   <span className="text-foreground font-medium">Live demo</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30 shadow-md">
                   <MessageCircle className="w-5 h-5 text-primary" />
                   <span className="text-foreground font-medium">Q&A session</span>
                 </div>
               </div>
             </div>
 
-            {/* Form Card */}
-            <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-lg">
+            {/* Form Card - Enhanced visibility */}
+            <div className="bg-card/95 backdrop-blur-md border-2 border-primary/20 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/20">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   {/* Name Row */}
