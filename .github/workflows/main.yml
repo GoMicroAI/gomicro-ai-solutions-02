@@ -17,9 +17,13 @@ jobs:
           node-version: 20
 
       - run: npm install
+
       - run: npm run build
 
       - run: |
+          mkdir temp_build
+          cp -r dist/* temp_build/
+
           git config user.name "github-actions"
           git config user.email "actions@github.com"
 
@@ -27,7 +31,7 @@ jobs:
           git checkout deploy || git checkout --orphan deploy
 
           rm -rf *
-          cp -r dist/* .
+          cp -r temp_build/* .
 
           git add .
           git commit -m "auto deploy build" || echo "no changes"
