@@ -39,7 +39,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "GoMicro Demo Waitlist <noreply@gomicro.ai>",
-      to: ["sivam@gomicro.ai"],
+      to: ["sivam@gomicro.ai", "kristie@gomicro.ai"],
       subject: `Demo Waitlist Registration: ${firstName} ${lastName} - ${company}`,
       html: `
         <h2>New Demo Waitlist Registration</h2>
