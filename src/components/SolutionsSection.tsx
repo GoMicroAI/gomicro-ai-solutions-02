@@ -7,6 +7,15 @@ import spinachQc from "@/assets/spinach-qc.jpeg";
 import aiQcSolutions from "@/assets/ai-qc-solutions.png";
 
 const solutions = [{
+  id: "fruits-veg",
+  icon: Apple,
+  title: "Fruits & Vegetables",
+  subtitle: "Green Leaves, Berries, Tomatoes",
+  description: "Advanced inspection for fresh produce to ensure consistent quality.",
+  features: ["Defect Assessment (to meet trading standards)", "Varietal Assessment", "Freshness Analysis"],
+  image: spinachQc,
+  imageAlt: "GoMicro AI fruits and vegetables quality assessment machine"
+}, {
   id: "grains",
   icon: Wheat,
   title: "Grains QC Assessment",
@@ -24,15 +33,6 @@ const solutions = [{
   features: ["Defect Assessment (to USDA Standards)", "Top & Bottom Inspection", "Quality Grading"],
   image: nutsMachine,
   imageAlt: "GoMicro AI nut quality assessment machine"
-}, {
-  id: "fruits-veg",
-  icon: Apple,
-  title: "Fruits & Vegetables",
-  subtitle: "Green Leaves, Berries, Tomatoes",
-  description: "Advanced inspection for fresh produce to ensure consistent quality.",
-  features: ["Defect Assessment (to meet trading standards)", "Varietal Assessment", "Freshness Analysis"],
-  image: spinachQc,
-  imageAlt: "GoMicro AI fruits and vegetables quality assessment machine"
 }];
 
 const SolutionsSection = () => {
