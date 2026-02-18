@@ -16,15 +16,6 @@ const solutions = [{
   image: spinachQc,
   imageAlt: "GoMicro AI fruits and vegetables quality assessment machine"
 }, {
-  id: "grains",
-  icon: Wheat,
-  title: "Grains QC Assessment",
-  subtitle: "Wheat, Barley, Lentils & Sorghum",
-  description: "Comprehensive grain quality assessment powered by AI to meet trading standards.",
-  features: ["Defect Assessment (to meet trading standards)", "Varietal Assessment", "Germination Tests"],
-  image: grainsMachine,
-  imageAlt: "GoMicro AI grain quality assessment machine"
-}, {
   id: "nuts",
   icon: AlmondIcon,
   title: "Nuts QC Assessment",
@@ -33,6 +24,15 @@ const solutions = [{
   features: ["Defect Assessment (to USDA Standards)", "Top & Bottom Inspection", "Quality Grading"],
   image: nutsMachine,
   imageAlt: "GoMicro AI nut quality assessment machine"
+}, {
+  id: "grains",
+  icon: Wheat,
+  title: "Grains QC Assessment",
+  subtitle: "Wheat, Barley, Lentils & Sorghum",
+  description: "Comprehensive grain quality assessment powered by AI to meet trading standards.",
+  features: ["Defect Assessment (to meet trading standards)", "Varietal Assessment", "Germination Tests"],
+  image: grainsMachine,
+  imageAlt: "GoMicro AI grain quality assessment machine"
 }];
 
 const SolutionsSection = () => {
