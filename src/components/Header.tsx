@@ -10,12 +10,12 @@ const Header = () => {
   const isHomePage = location.pathname === "/";
 
   const navLinks = [
-    { href: "solutions", label: "Solutions" },
-    { href: "technology", label: "Technology" },
-    { href: "about", label: "About" },
-    { href: "contact", label: "Contact" },
-    { href: "/joindemo", label: "Join Our Next Online Demo", isRoute: true },
-  ];
+  { href: "solutions", label: "Solutions" },
+  { href: "technology", label: "Technology" },
+  { href: "about", label: "About" },
+  { href: "contact", label: "Contact" },
+  { href: "/joindemo", label: "Join Our Next Online Demo", isRoute: true }];
+
 
   const getNavHref = (section: string) => {
     return isHomePage ? `#${section}` : `/#${section}`;
@@ -26,11 +26,53 @@ const Header = () => {
       {/* Scrolling Banner */}
       <div className="bg-primary text-primary-foreground py-1.5 overflow-hidden">
         <div className="flex animate-scroll-banner">
-          {[...Array(2)].map((_, i) => (
-            <span key={i} className="flex-shrink-0 px-4 text-sm font-semibold tracking-wide whitespace-nowrap">
-              Super Human HC • More Accurate • Faster • Lower Cost • Lower Rejection Risk •&nbsp;
-            </span>
-          ))}
+          {[...Array(2)].map((_, i) =>
+          <span key={i} className="flex-shrink-0 px-4 text-sm font-semibold tracking-wide whitespace-nowrap">
+              Super Human Accuracey • Reduce Rejections  • Reduce Costs  • GoMicro can QC Anything that you can QC by eye
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+ 
+  
+            </span>)}
         </div>
       </div>
       
@@ -44,25 +86,13 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              'isRoute' in link && link.isRoute ? (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200"
-                >
+            {navLinks.map((link) => 'isRoute' in link && link.isRoute ? <Link key={link.href} to={link.href} className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200">
+
                   {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.href}
-                  href={getNavHref(link.href)}
-                  className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200"
-                >
+                </Link> : <a key={link.href} href={getNavHref(link.href)} className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200">
+
                   {link.label}
-                </a>
-              )
-            ))}
+                </a>)}
           </nav>
 
           {/* CTA Button */}
@@ -73,38 +103,23 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
+          <button className="lg:hidden p-2 text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+        {isMenuOpen && <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={getNavHref(link.href)}
-                  className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200 py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+              {navLinks.map((link) => <a key={link.href} href={getNavHref(link.href)} className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200 py-2" onClick={() => setIsMenuOpen(false)}>
+
                   {link.label}
-                </a>
-              ))}
+                </a>)}
               <Button className="mt-2" asChild>
                 <Link to="/joindemo" onClick={() => setIsMenuOpen(false)}>Book a Demo</Link>
               </Button>
             </nav>
-          </div>
-        )}
+          </div>}
       </div>
-    </header>
-  );
-};
-
-export default Header;
+    </header>);};export default Header;
