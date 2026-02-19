@@ -14,6 +14,7 @@ const Header = () => {
     { href: "technology", label: "Technology" },
     { href: "about", label: "About" },
     { href: "contact", label: "Contact" },
+    { href: "/joindemo", label: "Join Our Next Online Demo", isRoute: true },
   ];
 
   const getNavHref = (section: string) => {
@@ -44,21 +45,28 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={getNavHref(link.href)}
-                className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200"
-              >
-                {link.label}
-              </a>
+              'isRoute' in link && link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={getNavHref(link.href)}
+                  className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/joindemo">Join Our Next Online Demo</Link>
-            </Button>
             <Button size="lg" asChild>
               <Link to="/joindemo">Book a Demo</Link>
             </Button>
