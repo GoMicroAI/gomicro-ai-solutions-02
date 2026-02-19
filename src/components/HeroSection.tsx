@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-import { Wheat, Apple, Play } from "lucide-react";
+import { Wheat, Apple } from "lucide-react";
 import AlmondIcon from "@/components/icons/AlmondIcon";
-import { Button } from "@/components/ui/button";
 import heroProduct from "@/assets/hero-product.png";
 
 const categoryButtons = [
@@ -24,7 +22,7 @@ const HeroSection = () => {
       </div>
       
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-[40px] flex flex-col items-center lg:items-start justify-end pb-24 text-center lg:text-left h-full min-h-screen">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-[40px] flex flex-col items-center lg:items-start justify-end pb-36 text-center lg:text-left h-full min-h-screen">
         {/* Text Content */}
         <div className="animate-fade-in-up flex flex-col items-center lg:items-start">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-foreground leading-tight mb-4">
@@ -45,21 +43,6 @@ const HeroSection = () => {
                 <span className="text-white font-medium text-base sm:text-lg">{cat.label}</span>
               </a>
             ))}
-
-            {/* Join Demo Button with Border Light Animation */}
-            <Link to="/joindemo" className="group relative inline-block">
-              {/* Animated border wrapper */}
-              <div className="absolute -inset-[2px] rounded-xl bg-gradient-to-r from-white/10 via-white/60 to-white/10 bg-[length:200%_100%] animate-border-light opacity-80" />
-              <Button 
-                size="lg" 
-                className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
-              >
-                <span className="relative z-10 flex items-center gap-2 sm:gap-3">
-                  <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
-                  Join Our Next Online Demo
-                </span>
-              </Button>
-            </Link>
           </div>
         </div>
       </div>
