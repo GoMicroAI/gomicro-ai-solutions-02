@@ -2,27 +2,27 @@ import { Cpu, Lightbulb, Zap, Layers } from "lucide-react";
 import nvidiaInceptionImg from "@/assets/nvidia-inception-badge.jpg";
 
 const technologies = [
-  {
-    icon: Layers,
-    title: "Synthetic Training Images",
-    description: "Advanced AI models trained on synthetic data for unparalleled accuracy and consistency.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Patented Imaging Technology",
-    description: "Proprietary lighting technology ensures consistent image quality across all conditions.",
-  },
-  {
-    icon: Zap,
-    title: "Flexible Deployment",
-    description: "Adaptable solutions that integrate seamlessly into existing production lines.",
-  },
-  {
-    icon: Cpu,
-    title: "Powered by Nvidia",
-    description: "Industry-leading GPU technology delivers real-time processing and analysis.",
-  },
-];
+{
+  icon: Layers,
+  title: "Synthetic Training Images",
+  description: "Advanced AI models trained on synthetic data for unparalleled accuracy and consistency."
+},
+{
+  icon: Lightbulb,
+  title: "Patented Imaging Technology",
+  description: "Proprietary lighting technology ensures consistent image quality across all conditions."
+},
+{
+  icon: Zap,
+  title: "Flexible Deployment",
+  description: "Adaptable solutions that integrate seamlessly into existing production lines."
+},
+{
+  icon: Cpu,
+  title: "Powered by Nvidia",
+  description: "Industry-leading GPU technology delivers real-time processing and analysis."
+}];
+
 
 const TechnologySection = () => {
   return (
@@ -35,18 +35,18 @@ const TechnologySection = () => {
             <h2 className="mt-4 text-2xl sm:text-3xl lg:text-5xl font-bold text-white">
               How we achieve super human accuracies
             </h2>
-            <p className="mt-6 text-lg text-gray-400">
-              Our proprietary technology stack combines advanced machine learning, patented hardware, 
-              and flexible deployment options to deliver unmatched quality control performance - enabling us to exceed human accuracy.
+            <p className="mt-6 text-lg text-gray-400">Our proprietary technology stack combines advanced machine learning, imaging hardware, with flexible deployment options to deliver unmatched quality control performance - enabling us to exceed human accuracy.
+
+
             </p>
 
             {/* Tech Grid */}
             <div className="mt-10 space-y-4">
-              {technologies.map((tech, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 p-5 rounded-xl bg-[#141414] border-l-2 border-primary/60 hover:border-primary transition-all duration-300"
-                >
+              {technologies.map((tech, index) =>
+              <div
+                key={index}
+                className="flex items-start gap-4 p-5 rounded-xl bg-[#141414] border-l-2 border-primary/60 hover:border-primary transition-all duration-300">
+
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <tech.icon className="w-5 h-5 text-primary" />
                   </div>
@@ -55,7 +55,7 @@ const TechnologySection = () => {
                     <p className="text-sm text-gray-500 mt-1">{tech.description}</p>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
@@ -67,14 +67,14 @@ const TechnologySection = () => {
                 alt="NVIDIA Inception Program Member"
                 className="w-full h-auto object-contain"
                 loading="lazy"
-                decoding="async"
-              />
+                decoding="async" />
+
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default TechnologySection;
