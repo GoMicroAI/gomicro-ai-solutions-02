@@ -61,10 +61,10 @@ const AboutSection = () => {
 
 
                 <h3 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Our Vision</h3>
-                <p className="max-w-sm text-xs sm:text-base text-secondary font-semibold leading-relaxed">
-                  Empowering the agricultural industry with AI technology that ensures consistent quality, 
-                  reduces waste, and meets global standards.
-                </p>
+                
+
+
+
               </div>
             </div>
           </div>
