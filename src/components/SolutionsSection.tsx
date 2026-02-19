@@ -111,8 +111,8 @@ const SolutionsSection = () => {
                 {/* Content */}
                 <div className="w-full lg:w-1/2">
                   {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-foreground mb-6">
-                    <solution.icon className="w-7 h-7 text-background" />
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/20 mb-6">
+                    <solution.icon className="w-7 h-7 text-primary" />
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">{solution.title}</h3>
@@ -127,15 +127,10 @@ const SolutionsSection = () => {
                       </li>)}
                   </ul>
 
-                  {/* CTAs */}
-                  <div className="flex flex-wrap items-center gap-4">
-                    <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
-                      <a href="#contact">Learn More</a>
-                    </Button>
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-                      <a href="/join-demo">Join Our Next Online Demo</a>
-                    </Button>
-                  </div>
+                  {/* CTA */}
+                  <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
+                    <a href="#contact">Learn More</a>
+                  </Button>
                 </div>
               </div>
               
