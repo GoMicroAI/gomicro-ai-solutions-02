@@ -32,29 +32,27 @@ const HeroSection = () => {
           </h1>
           
           {/* Category Buttons */}
-          <div className="flex flex-wrap gap-3 sm:gap-4 mt-2 justify-center lg:justify-start">
+          <div className="flex flex-wrap gap-3 sm:gap-4 mt-2 items-center justify-center lg:justify-start">
             {categoryButtons.map((cat) => (
               <a
                 key={cat.id}
                 href={`#${cat.id}`}
                 className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-primary/60 bg-primary/20 backdrop-blur-md hover:bg-primary/30 transition-colors"
               >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-primary/70 bg-primary/15 flex items-center justify-center">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-primary/70 bg-black flex items-center justify-center">
                   <cat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                 </div>
                 <span className="text-white font-medium text-base sm:text-lg">{cat.label}</span>
               </a>
             ))}
-          </div>
 
-          {/* Join Demo Button with Border Light Animation */}
-          <div className="mt-6 sm:mt-8">
+            {/* Join Demo Button with Border Light Animation */}
             <Link to="/joindemo" className="group relative inline-block">
               {/* Animated border wrapper */}
               <div className="absolute -inset-[2px] rounded-xl bg-gradient-to-r from-white/10 via-white/60 to-white/10 bg-[length:200%_100%] animate-border-light opacity-80" />
               <Button 
                 size="lg" 
-                className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
+                className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center gap-2 sm:gap-3">
                   <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
