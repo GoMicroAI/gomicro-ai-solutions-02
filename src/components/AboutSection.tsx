@@ -1,4 +1,4 @@
-import { MapPin, Lightbulb, Target } from "lucide-react";
+import { MapPin, Lightbulb } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.png";
 const AboutSection = () => {
   return <section id="about" className="py-24 lg:py-32 bg-muted/50">
@@ -46,19 +46,19 @@ const AboutSection = () => {
           {/* Visual */}
           <div className="relative">
           <div className="aspect-[4/3] rounded-3xl overflow-hidden flex items-start justify-center relative bg-muted">
-              <img 
-                src="/lovable-uploads/staff.jpg" 
-                alt="GoMicro team" 
-                className="absolute inset-0 w-full h-full object-cover object-top"
-                loading="lazy"
-                decoding="async"
-              />
+              <img
+              src="/lovable-uploads/staff.jpg"
+              alt="GoMicro team"
+              className="absolute inset-0 w-full h-full object-cover object-top"
+              loading="lazy"
+              decoding="async" />
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-transparent" />
               
               <div className="relative text-center text-white p-4 sm:p-8 pt-1 sm:pt-2">
                 <div className="w-10 h-10 sm:w-24 sm:h-24 mx-auto mb-2 sm:mb-6 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <Target className="w-5 h-5 sm:w-12 sm:h-12" />
+                  
                 </div>
                 <h3 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Our Vision</h3>
                 <p className="max-w-sm text-xs sm:text-base text-secondary font-semibold leading-relaxed">
