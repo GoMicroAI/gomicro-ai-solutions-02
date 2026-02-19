@@ -17,7 +17,7 @@ const HeroSection = () => {
         <img 
           src={heroProduct}
           alt="GoMicro AI in a Box device in warehouse setting"
-          className="absolute inset-0 w-full h-full object-cover object-[center_30%] sm:object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[center_20%] sm:object-[center_25%]"
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-background/35 text-primary-foreground" />
