@@ -24,7 +24,7 @@ const HeroSection = () => {
       </div>
       
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-[40px] flex flex-col items-center lg:items-start justify-end pb-36 text-center lg:text-left h-full min-h-screen">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-[40px] flex flex-col items-center lg:items-start justify-end pb-52 text-center lg:text-left h-full min-h-screen">
         {/* Text Content */}
         <div className="animate-fade-in-up flex flex-col items-center lg:items-start">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-foreground leading-tight mb-4">
