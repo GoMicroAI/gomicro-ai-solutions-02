@@ -18,9 +18,10 @@ const AboutSection = () => {
 
           </p>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              Our mission is to transform quality control in agriculture through superhuman AI inspection systems 
-              that deliver unprecedented accuracy, speed, and consistency.
-            </p>
+              We have developed solutions for grains, fruits, vegetables, nuts, and seeds assessment. Our strength lies not just in AI models, but in designing practical, edge-based systems that integrate seamlessly into the agricultural value chain.
+
+            
+          </p>
 
             {/* Info Cards */}
             <div className="mt-10 grid sm:grid-cols-2 gap-6">
@@ -49,8 +50,7 @@ const AboutSection = () => {
           {/* Visual */}
           <div className="relative">
           <div className="aspect-[4/3] rounded-3xl overflow-hidden flex items-start justify-center relative bg-muted">
-              <img src="/lovable-uploads/staff.jpg" alt="GoMicro team" className="absolute inset-0 w-full h-full object-cover object-top"
-            loading="lazy"
+              <img src="/lovable-uploads/staff.jpg" alt="GoMicro team" className="absolute inset-0 w-full h-full object-cover object-top" loading="lazy"
             decoding="async" />
 
               {/* Overlay */}
