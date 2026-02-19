@@ -60,7 +60,7 @@ const AboutSection = () => {
                 
 
 
-                <h3 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Our Vision</h3>
+                
                 
 
 
