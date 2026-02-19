@@ -11,7 +11,7 @@ const categoryButtons = [
 ];
 
 const HeroSection = () => {
-  return <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-20">
+  return <section className="relative min-h-screen flex items-center justify-center pt-0">
       {/* Hero Background Image */}
       <div className="absolute inset-0">
         <img 
