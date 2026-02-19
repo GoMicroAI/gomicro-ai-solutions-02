@@ -56,16 +56,16 @@ const AboutSection = () => {
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-transparent" />
               
-              <div className="relative text-center text-white p-4 sm:p-8 pt-1 sm:pt-2">
-                
-
-
-                <h3 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Our Vision</h3>
-                
+              
 
 
 
-              </div>
+
+
+
+
+
+
             </div>
           </div>
         </div>
