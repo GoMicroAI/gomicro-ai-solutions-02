@@ -110,12 +110,13 @@ const SolutionsSection = () => {
 
                 {/* Content */}
                 <div className="w-full lg:w-1/2">
-                  {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-black border-2 border-primary/30 mb-6">
-                    <solution.icon className="w-7 h-7 text-primary" />
+                  {/* Icon + Title */}
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-black border-2 border-primary/30 flex-shrink-0">
+                      <solution.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">{solution.title}</h3>
                   </div>
-
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">{solution.title}</h3>
                   <p className="text-primary font-medium text-lg mb-4">{solution.subtitle}</p>
                   <p className="text-muted-foreground text-lg mb-8">{solution.description}</p>
 
