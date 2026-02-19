@@ -18,7 +18,7 @@ const AboutSection = () => {
 
           </p>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              We have developed solutions for grains, fruits, vegetables, nuts, and seeds assessment. Our strength lies not just in AI models, but in designing practical, edge-based systems that integrate seamlessly into the agricultural value chain.
+              Our mission is to transform quality control in agriculture through superhuman AI inspection systems that deliver unprecedented accuracy, speed, and consistency.
 
             
           </p>
