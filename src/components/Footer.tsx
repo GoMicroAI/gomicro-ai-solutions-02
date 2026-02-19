@@ -21,8 +21,9 @@ const Footer = () => {
               <span className="text-xl font-bold">GoMicro</span>
             </Link>
             <p className="text-muted-foreground max-w-md">
-              AI-first company developing cutting-edge AI solutions for the Agricultural Industry. 
-              Super Human QC for grains, nuts, and fresh produce.
+              At GoMicro, we are transforming the agricultural value chain by enabling objective quality measurement, reducing food waste, improving operational efficiency, and bringing greater transparency and fairness to trade through precise and consistent assessment
+
+            
             </p>
           </div>
 
@@ -91,8 +92,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
 };
 
 export default Footer;
