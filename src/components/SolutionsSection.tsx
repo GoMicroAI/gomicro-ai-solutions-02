@@ -111,7 +111,7 @@ const SolutionsSection = () => {
                 {/* Content */}
                 <div className="w-full lg:w-1/2">
                   {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/20 mb-6">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-black mb-6">
                     <solution.icon className="w-7 h-7 text-primary" />
                   </div>
 
