@@ -5,7 +5,7 @@ const technologies = [
 {
   icon: Layers,
   title: "Synthetic Training Images",
-  description: "Advanced AI models trained on synthetic data for unparalleled accuracy and consistency."
+  description: "We do not rely on sweat shops for annotation. Our advanced AI models are trained on synthetic data for unparalleled accuracy and consistency."
 },
 {
   icon: Lightbulb,
