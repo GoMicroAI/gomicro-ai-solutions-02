@@ -27,18 +27,8 @@ const Header = () => {
       <div className="bg-primary text-primary-foreground py-1.5 overflow-hidden">
         <div className="flex animate-scroll-banner">
           {[...Array(2)].map((_, i) =>
-          <span key={i} className="flex-shrink-0 px-4 text-sm font-semibold tracking-wide whitespace-nowrap">
-              Super Human Accuracey • Reduce Rejections  • Reduce Costs  • GoMicro can QC Anything that you can QC by eye
-
-
- 
-
-
- 
-
-
-
-
+          <span key={i} className="flex-shrink-0 px-4 text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap">
+              Super Human HC • More Accurate • Faster • Lower Cost • Lower Rejection Risk • 
 
 
 
