@@ -28,7 +28,7 @@ const Header = () => {
         <div className="flex animate-scroll-banner">
           {[...Array(2)].map((_, i) => (
             <span key={i} className="flex-shrink-0 px-4 text-sm font-semibold tracking-wide whitespace-nowrap">
-              Super Human QC with AI in a Box • Grains Quality Control • Nuts Quality Control • Fruits & Vegetables Quality Control •&nbsp;
+              Super Human HC • More Accurate • Faster • Lower Cost • Lower Rejection Risk •&nbsp;
             </span>
           ))}
         </div>
