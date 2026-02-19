@@ -54,8 +54,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/joindemo">Join Our Next Online Demo</Link>
+            </Button>
             <Button size="lg" asChild>
               <Link to="/joindemo">Book a Demo</Link>
             </Button>
