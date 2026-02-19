@@ -11,9 +11,12 @@ const AboutSection = () => {
               AI-First Innovation for Agriculture
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              GoMicro is an AI-first company developing cutting-edge AI solutions for the Agricultural Industry, 
-              based at Tonsley Innovation Precinct in South Australia.
-            </p>
+              GoMicro is an AI-first technology company building edge-based inspection systems for modern agriculture. Based at the Tonsley Innovation Precinct in South Australia, we design and deploy high-precision AI solutions that deliver Superhuman Quality Assessment — transforming how agricultural quality is measured and managed.
+
+
+            
+
+          </p>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
               Our mission is to transform quality control in agriculture through superhuman AI inspection systems 
               that deliver unprecedented accuracy, speed, and consistency.
@@ -46,12 +49,9 @@ const AboutSection = () => {
           {/* Visual */}
           <div className="relative">
           <div className="aspect-[4/3] rounded-3xl overflow-hidden flex items-start justify-center relative bg-muted">
-              <img
-              src="/lovable-uploads/staff.jpg"
-              alt="GoMicro team"
-              className="absolute inset-0 w-full h-full object-cover object-top"
-              loading="lazy"
-              decoding="async" />
+              <img src="/lovable-uploads/staff.jpg" alt="GoMicro team" className="absolute inset-0 w-full h-full object-cover object-top"
+            loading="lazy"
+            decoding="async" />
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-transparent" />
