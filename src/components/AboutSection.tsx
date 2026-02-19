@@ -47,7 +47,7 @@ const AboutSection = () => {
           <div className="relative">
           <div className="aspect-[4/3] rounded-3xl overflow-hidden flex items-start justify-center relative bg-muted">
               <img 
-                src="/lovable-uploads/da278507-e8f1-4585-8407-d2e1318e4f00.png" 
+                src="/lovable-uploads/staff.jpg" 
                 alt="GoMicro team" 
                 className="absolute inset-0 w-full h-full object-cover object-top"
                 loading="lazy"
