@@ -73,7 +73,7 @@ const RejectionBarChart = ({ currentQcPct, currentHandlingPct, aiqcQcPct, aiqcHa
       <div style={{ marginBottom: 12 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
           <span style={{ fontSize: 12, color: isAiqc ? BRAND.greenSave : BRAND.redCost, fontFamily: 'Arial, sans-serif', fontWeight: 600 }}>{label}</span>
-          <span style={{ fontSize: 14, fontWeight: 700, color: isAiqc ? BRAND.greenSave : BRAND.redCost, fontFamily: 'Arial, sans-serif' }}>{fmt(total)}</span>
+          <span style={{ fontSize: 14, fontWeight: 700, color: isAiqc ? BRAND.greenSave : BRAND.redCost, fontFamily: 'Arial, sans-serif', textDecoration: !isAiqc ? 'line-through' : 'none', textDecorationColor: BRAND.redCost }}>{fmt(total)}</span>
         </div>
         <div style={{ display: 'flex', height: 28, borderRadius: 6, overflow: 'hidden', background: 'rgba(255,255,255,0.03)' }}>
           <div style={{ width: `${qcW}%`, background: isAiqc ? 'rgba(74,222,128,0.6)' : BRAND.qcErrorOrange, transition: 'width 0.8s cubic-bezier(0.4,0,0.2,1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
