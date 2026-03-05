@@ -599,7 +599,7 @@ const ROICalculator = () => {
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif' }}><AnimatedNumber value={results.aiqcLabourCost} /></span>
                 </div>
                 <div style={{ padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, marginTop: 8, textAlign: 'center' }}>
-                  <span style={{ fontSize: 12, color: BRAND.gold, fontWeight: 600 }}>Saving <AnimatedNumber value={results.labourSaved} /> / year on labour costs</span>
+                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.labourSaved} /> / year on labour costs</span>
                 </div>
               </div>
 
@@ -614,7 +614,7 @@ const ROICalculator = () => {
                 </p>
                 <RejectionBarChart currentQcPct={qcErrorPct} currentHandlingPct={handlingPct} aiqcQcPct={aiqcQcErrorPct} aiqcHandlingPct={handlingPct} showAiqc={true} totalRejectCost={results.totalRejectCost} />
                 <div style={{ padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, marginTop: 12, textAlign: 'center' }}>
-                  <span style={{ fontSize: 12, color: BRAND.gold, fontWeight: 600 }}>Saving <AnimatedNumber value={results.rejectSaved} /> / year on rejections</span>
+                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.rejectSaved} /> / year on rejections</span>
                 </div>
               </div>
             </div>
