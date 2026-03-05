@@ -46,6 +46,11 @@ const Footer = () => {
                   Fruits & Vegetables
                 </a>
               </li>
+              <li>
+                <Link to="/qc-calculator" className="text-muted-foreground hover:text-primary transition-colors">
+                  QC Cost Calculator
+                </Link>
+              </li>
             </ul>
           </div>
 
