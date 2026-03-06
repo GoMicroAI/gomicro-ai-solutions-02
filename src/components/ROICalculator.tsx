@@ -191,8 +191,8 @@ const RejectionCauseSplitSlider = ({ qcErrorPct, handlingPct, onChange }: { qcEr
       </div>
       <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 10 }}>What percentage of rejections are due to QC errors vs handling issues?</p>
       <div style={{ display: 'flex', fontSize: 10, fontWeight: 600, marginBottom: 4, userSelect: 'none', fontFamily: 'Arial, sans-serif' }}>
-        <span style={{ width: `${qcErrorPct}%`, textAlign: 'center', color: BRAND.qcErrorOrange }}>QC Errors</span>
-        <span style={{ width: `${handlingPct}%`, textAlign: 'center', color: BRAND.handlingGreen }}>Handling</span>
+        <span style={{ width: `${qcErrorPct}%`, textAlign: 'center', color: BRAND.textSecondary }}>QC Errors</span>
+        <span style={{ width: `${handlingPct}%`, textAlign: 'center', color: BRAND.textSecondary }}>Handling</span>
       </div>
       <div ref={barRef} style={{ position: 'relative', height: 36, borderRadius: 8, display: 'flex', cursor: 'default', userSelect: 'none', touchAction: 'none', overflow: 'visible' }}>
         <div style={{ width: `${qcErrorPct}%`, height: '100%', background: BRAND.qcErrorOrange, borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 13, fontWeight: 700, transition: 'width 75ms', fontFamily: 'Arial, sans-serif' }}>
