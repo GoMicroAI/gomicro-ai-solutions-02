@@ -581,16 +581,14 @@ const ROICalculator = () => {
                   <Users style={{ width: 14, height: 14 }} /> Labour With AI QC
                 </div>
                 <AiqcSlider label="QC Labour Reduction" value={aiqcLabourReduction} onChange={setAiqcLabourReduction} min={20} max={95} step={5} unit="%" defaultVal={AIQC_DEFAULTS.labourReductionPct} description="% of QC labour hours automated by AI QC" />
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0' }}>
                   <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Current</span>
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.redCost, textDecoration: 'line-through', textDecorationColor: BRAND.redCost, fontFamily: 'Georgia, serif' }}>{fmt(results.annualLabour)}</span>
                 </div>
-                <div style={{ height: 28, borderRadius: 6, background: BRAND.qcErrorOrange, marginBottom: 12 }} />
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0', marginTop: 40 }}>
                   <span style={{ fontSize: 13, color: BRAND.greenSave, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>With AI QC</span>
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif' }}><AnimatedNumber value={results.aiqcLabourCost} /></span>
                 </div>
-                <div style={{ height: 28, borderRadius: 6, background: 'rgba(74,222,128,0.6)', marginBottom: 12 }} />
                 <div style={{ marginTop: 'auto', padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, textAlign: 'center' }}>
                   <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.labourSaved} /> / year on labour costs</span>
                 </div>
