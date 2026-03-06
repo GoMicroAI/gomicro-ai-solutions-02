@@ -11,10 +11,7 @@ const QCCalculator = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <div className="pt-32 pb-8 container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground text-center">QC Cost Calculator</h1>
-          
-        </div>
+        <div className="pt-28" />
         <ROICalculator />
       </main>
       <Footer />
