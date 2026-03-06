@@ -150,7 +150,7 @@ const SolutionsSection = () => {
                       <a href="#contact">Learn More</a>
                     </Button>
                     <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
-                      <a href="#contact">Watch Video</a>
+                      <a href="https://drive.google.com/file/d/1XpnCr_Q4iwGg2p1C5bYTNgVhFxoRakQm/view?usp=sharing" target="_blank" rel="noopener noreferrer">Watch Video</a>
                     </Button>
                   </div>
                 </div>
