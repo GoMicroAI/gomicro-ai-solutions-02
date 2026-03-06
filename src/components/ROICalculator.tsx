@@ -453,9 +453,8 @@ const ROICalculator = () => {
               <Users style={{ width: 14, height: 14 }} /> QC Labour Cost
             </div>
             <BoxInput label="QC Staff" value={qcStaff} onChange={setQcStaff} unit="ppl" width={72} step="0.5" hint="People doing QC" />
-            <SegmentSlider visual={segments.visual} recording={segments.recording} other={segments.other} onChange={setSegments} />
-            
             <BoxInput label="Hourly Labour Cost" value={hourlyRate} onChange={setHourlyRate} unit="$/hr" step="1" hint="Base + ~30% on-costs" />
+            <SegmentSlider visual={segments.visual} recording={segments.recording} other={segments.other} onChange={setSegments} />
             <div style={{ marginTop: 'auto', padding: 12, borderRadius: 10, background: BRAND.redBg, border: `1px solid ${BRAND.redBorder}` }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Annual QC Labour Cost</span>
