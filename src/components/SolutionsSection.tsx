@@ -1,4 +1,5 @@
-import { Wheat, Apple, CheckCircle, ShieldCheck, Zap, DollarSign } from "lucide-react";
+import { Wheat, Apple, CheckCircle, ShieldCheck, Zap, DollarSign, Calculator } from "lucide-react";
+import { Link } from "react-router-dom";
 import AlmondIcon from "@/components/icons/AlmondIcon";
 import { Button } from "@/components/ui/button";
 import grainsMachine from "@/assets/grains-machine.png";
@@ -78,6 +79,18 @@ const SolutionsSection = () => {
                   <span className="text-xl md:text-2xl font-bold text-primary text-center">Reduce QC Cost</span>
                 </div>
               </div>
+            </div>
+
+            {/* QC Cost Calculator CTA */}
+            <div className="col-span-full mt-6">
+              <Link to="/qc-calculator">
+                <div className="group relative w-full px-8 py-6 rounded-2xl bg-gradient-to-r from-primary via-primary/90 to-primary border-2 border-primary shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+                  <div className="relative flex items-center justify-center gap-4">
+                    <Calculator className="w-7 h-7 text-primary-foreground" />
+                    <span className="text-lg md:text-xl font-bold text-primary-foreground text-center">QC Cost Calculator — Find Your True Cost of Quality Control in Minutes</span>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
