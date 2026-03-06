@@ -84,10 +84,13 @@ const SolutionsSection = () => {
             {/* QC Cost Calculator CTA */}
             <div className="col-span-full mt-6">
               <Link to="/qc-calculator">
-                <div className="group relative w-full px-8 py-6 rounded-2xl bg-gradient-to-r from-primary via-primary/90 to-primary border-2 border-primary shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] transition-all duration-300 cursor-pointer">
-                  <div className="relative flex items-center justify-center gap-4">
-                    <Calculator className="w-7 h-7 text-primary-foreground" />
-                    <span className="text-lg md:text-xl font-bold text-primary-foreground text-center">QC Cost Calculator — Find Your True Cost of Quality Control in Minutes</span>
+                <div className="group relative w-full px-8 py-6 rounded-2xl bg-gradient-to-r from-primary via-primary/90 to-primary border-2 border-yellow-400/60 shadow-[0_0_20px_rgba(250,204,21,0.4),0_0_40px_rgba(250,204,21,0.2)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5),0_0_60px_rgba(250,204,21,0.3)] hover:scale-[1.02] transition-all duration-300 cursor-pointer animate-pulse-subtle">
+                  <div className="relative flex flex-col items-center justify-center gap-1">
+                    <div className="flex items-center gap-3">
+                      <Calculator className="w-7 h-7 text-primary-foreground" />
+                      <span className="text-lg md:text-xl font-bold text-primary-foreground">QC Cost Calculator</span>
+                    </div>
+                    <span className="text-sm md:text-base text-primary-foreground/80 font-medium">Find Your True Cost of Quality Control in Minutes</span>
                   </div>
                 </div>
               </Link>
