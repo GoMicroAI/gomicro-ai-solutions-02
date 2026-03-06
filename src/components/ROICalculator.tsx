@@ -454,7 +454,7 @@ const ROICalculator = () => {
             </div>
             <BoxInput label="QC Staff" value={qcStaff} onChange={setQcStaff} unit="ppl" width={72} step="0.5" hint="People doing QC" />
             <SegmentSlider visual={segments.visual} recording={segments.recording} other={segments.other} onChange={setSegments} />
-            <SliderInput label="Hours / Day on QC" value={qcHoursPerDay} onChange={setQcHoursPerDay} min={0.5} max={10} step={0.5} unit=" hrs" description="Total person-hours per staff member per day" />
+            
             <BoxInput label="Hourly Labour Cost" value={hourlyRate} onChange={setHourlyRate} unit="$/hr" step="1" hint="Base + ~30% on-costs" />
             <div style={{ marginTop: 'auto', padding: 12, borderRadius: 10, background: BRAND.redBg, border: `1px solid ${BRAND.redBorder}` }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
