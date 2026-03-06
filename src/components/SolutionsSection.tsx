@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Wheat, Apple, CheckCircle, ShieldCheck, Zap, DollarSign, Calculator } from "lucide-react";
+import { useState, useRef, useCallback } from "react";
+import { Wheat, Apple, CheckCircle, ShieldCheck, Zap, DollarSign, Calculator, Play, Pause } from "lucide-react";
 import { Link } from "react-router-dom";
 import AlmondIcon from "@/components/icons/AlmondIcon";
 import { Button } from "@/components/ui/button";
@@ -40,6 +40,18 @@ const solutions = [{
 
 const SolutionsSection = () => {
   const [videoOpen, setVideoOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlayPause = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }, []);
 
   return <>
     <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
@@ -130,15 +142,31 @@ const SolutionsSection = () => {
                 <div className="w-full lg:w-1/2">
                   <div className="relative rounded-2xl overflow-hidden shadow-xl">
                     {solution.id === "fruits-veg" ? (
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-auto object-contain"
-                      >
-                        <source src="/videos/spinach-video.mp4" type="video/mp4" />
-                      </video>
+                      <div className="relative group">
+                        <video
+                          ref={(el) => { if (el) videoRef.current = el; }}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto object-contain"
+                          onPlay={() => setIsPlaying(true)}
+                          onPause={() => setIsPlaying(false)}
+                        >
+                          <source src="/videos/spinach-video.mp4" type="video/mp4" />
+                        </video>
+                        <button
+                          onClick={togglePlayPause}
+                          className="absolute bottom-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-opacity opacity-0 group-hover:opacity-100"
+                          aria-label={isPlaying ? "Pause video" : "Play video"}
+                        >
+                          {isPlaying ? (
+                            <Pause className="h-5 w-5" />
+                          ) : (
+                            <Play className="h-5 w-5" />
+                          )}
+                        </button>
+                      </div>
                     ) : (
                       <img 
                         src={solution.image} 
