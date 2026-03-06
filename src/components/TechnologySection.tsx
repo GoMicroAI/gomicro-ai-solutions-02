@@ -52,7 +52,7 @@ const TechnologySection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white">{tech.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{tech.description}</p>
+                    <p className="text-sm text-gray-400 mt-1">{tech.description}</p>
                   </div>
                 </div>
               )}
