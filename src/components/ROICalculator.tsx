@@ -452,7 +452,7 @@ const ROICalculator = () => {
             <BoxInput label="Weekly Volume" value={volumePerWeek} onChange={setVolumePerWeek} unit="kg" width={96} step="1000" hint={volumePerWeek >= 500 ? `≈ ${(volumePerWeek / 1000).toFixed(0)}t/week` : 'Min 500kg'} />
             <BoxInput label="Days / Week" value={daysPerWeek} onChange={setDaysPerWeek} unit="days" width={64} step="1" />
             <BoxInput label="Weeks / Year" value={weeksPerYear} onChange={setWeeksPerYear} unit="wks" width={64} step="1" hint={weeksPerYear < 52 ? 'Seasonal' : ''} />
-            <BoxInput label="QC Staff" value={qcStaff} onChange={setQcStaff} unit="ppl" width={72} step="0.5" hint="People doing QC" />
+            
           </div>
         </div>
 
@@ -463,6 +463,7 @@ const ROICalculator = () => {
             <div style={{ ...s.sectionLabel, color: BRAND.gold }}>
               <Users style={{ width: 14, height: 14 }} /> QC Labour Cost
             </div>
+            <BoxInput label="QC Staff" value={qcStaff} onChange={setQcStaff} unit="ppl" width={72} step="0.5" hint="People doing QC" />
             <SegmentSlider visual={segments.visual} recording={segments.recording} other={segments.other} onChange={setSegments} />
             <SliderInput label="Hours / Day on QC" value={qcHoursPerDay} onChange={setQcHoursPerDay} min={0.5} max={10} step={0.5} unit=" hrs" description="Total person-hours per staff member per day" />
             <BoxInput label="Hourly Labour Cost" value={hourlyRate} onChange={setHourlyRate} unit="$/hr" step="1" hint="Base + ~30% on-costs" />
