@@ -99,31 +99,27 @@ interface Segments { visual: number; recording: number; other: number; }
 
 const SegmentSlider = ({ visual, recording, other, onChange }: { visual: number; recording: number; other: number; onChange: (s: Segments) => void }) => {
   const barRef = useRef<HTMLDivElement>(null);
-  const dragging = useRef<string | null>(null);
+  const dragging = useRef(false);
+  const combined = visual + recording;
 
-  const handlePointerDown = useCallback((handle: string) => (e: React.PointerEvent) => {
+  const handlePointerDown = useCallback((e: React.PointerEvent) => {
     e.preventDefault();
-    dragging.current = handle;
+    dragging.current = true;
     const onMove = (ev: PointerEvent | TouchEvent) => {
       if (!barRef.current || !dragging.current) return;
       const rect = barRef.current.getBoundingClientRect();
       const clientX = 'touches' in ev ? ev.touches[0].clientX : ev.clientX;
       const pct = Math.round(Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100)));
-      if (dragging.current === 'left') {
-        const maxLeft = 100 - recording - 5;
-        const newVisual = Math.max(5, Math.min(maxLeft, pct));
-        onChange({ visual: newVisual, recording, other: 100 - newVisual - recording });
-      } else {
-        const minRight = visual + 5;
-        const newVisRec = Math.max(minRight, Math.min(95, pct));
-        const newRecording = newVisRec - visual;
-        if (newRecording >= 5) {
-          onChange({ visual, recording: newRecording, other: 100 - visual - newRecording });
-        }
-      }
+      const newCombined = Math.max(10, Math.min(95, pct));
+      const newOther = 100 - newCombined;
+      // Keep the same ratio between visual and recording
+      const ratio = visual / (visual + recording);
+      const newVisual = Math.round(newCombined * ratio);
+      const newRecording = newCombined - newVisual;
+      onChange({ visual: newVisual, recording: newRecording, other: newOther });
     };
     const onUp = () => {
-      dragging.current = null;
+      dragging.current = false;
       document.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerup', onUp);
       document.removeEventListener('touchmove', onMove);
@@ -135,33 +131,26 @@ const SegmentSlider = ({ visual, recording, other, onChange }: { visual: number;
     document.addEventListener('touchend', onUp);
   }, [visual, recording, other, onChange]);
 
-  const automatedPct = visual + recording;
-
   return (
     <div style={{ marginBottom: 20 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
-        <span style={{ fontSize: 13, fontWeight: 600, color: BRAND.textSecondary, fontFamily: 'Arial, sans-serif' }}>Inspection & Record Keeping</span>
-        <span style={{ fontSize: 20, fontWeight: 700, color: BRAND.gold, fontFamily: 'Georgia, serif' }}>{automatedPct} %</span>
+        <span style={{ fontSize: 13, fontWeight: 600, color: BRAND.textSecondary, fontFamily: 'Arial, sans-serif' }}>Visual Inspection & Recording</span>
+        <span style={{ fontSize: 20, fontWeight: 700, color: BRAND.gold, fontFamily: 'Georgia, serif' }}>{combined} %</span>
       </div>
       <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 10 }}>% of QC time on visual inspection + record keeping</p>
       <div style={{ display: 'flex', fontSize: 10, fontWeight: 600, marginBottom: 4, userSelect: 'none' }}>
-        <span style={{ width: `${visual}%`, textAlign: 'center', color: '#F6AD55', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Visual Insp.</span>
-        <span style={{ width: `${recording}%`, textAlign: 'center', color: '#D4A574', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Recording</span>
+        <span style={{ width: `${combined}%`, textAlign: 'center', color: '#F6AD55', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Insp. & Recording</span>
         <span style={{ width: `${other}%`, textAlign: 'center', color: '#68D391', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Other Activities</span>
       </div>
       <div ref={barRef} style={{ position: 'relative', height: 36, borderRadius: 8, display: 'flex', cursor: 'default', userSelect: 'none', touchAction: 'none' }}>
-        <div style={{ width: `${visual}%`, height: '100%', background: '#DD6B20', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 12, fontWeight: 700, transition: 'width 75ms' }}>{visual}%</div>
-        <div onPointerDown={handlePointerDown('left')} style={{ position: 'absolute', top: 0, bottom: 0, left: `${visual}%`, transform: 'translateX(-50%)', zIndex: 10, display: 'flex', alignItems: 'center', cursor: 'col-resize' }}>
-          <div style={{ width: 10, height: 36, background: '#fff', borderRadius: 3, boxShadow: '0 1px 4px rgba(0,0,0,0.4)' }} />
-        </div>
-        <div style={{ width: `${recording}%`, height: '100%', background: '#7B5B3A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 12, fontWeight: 700, transition: 'width 75ms' }}>{recording}%</div>
-        <div onPointerDown={handlePointerDown('right')} style={{ position: 'absolute', top: 0, bottom: 0, left: `${visual + recording}%`, transform: 'translateX(-50%)', zIndex: 10, display: 'flex', alignItems: 'center', cursor: 'col-resize' }}>
+        <div style={{ width: `${combined}%`, height: '100%', background: '#DD6B20', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 12, fontWeight: 700, transition: 'width 75ms' }}>{combined}%</div>
+        <div onPointerDown={handlePointerDown} style={{ position: 'absolute', top: 0, bottom: 0, left: `${combined}%`, transform: 'translateX(-50%)', zIndex: 10, display: 'flex', alignItems: 'center', cursor: 'col-resize' }}>
           <div style={{ width: 10, height: 36, background: '#fff', borderRadius: 3, boxShadow: '0 1px 4px rgba(0,0,0,0.4)' }} />
         </div>
         <div style={{ width: `${other}%`, height: '100%', background: '#2F855A', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 12, fontWeight: 700, transition: 'width 75ms' }}>{other}%</div>
       </div>
       <p style={{ fontSize: 10, color: 'rgba(74,222,128,0.6)', marginTop: 6, display: 'flex', alignItems: 'center', gap: 4 }}>
-        <CheckCircle style={{ width: 10, height: 10 }} /> GoMicro automates Visual Inspection + Recording ({automatedPct}% of QC time)
+        <CheckCircle style={{ width: 10, height: 10 }} /> GoMicro automates Visual Inspection & Recording ({combined}% of QC time)
       </p>
     </div>
   );
