@@ -383,10 +383,10 @@ const ROICalculator = () => {
   const AiqcSlider = ({ label, value, onChange, min, max, step, unit, defaultVal, description }: { label: string; value: number; onChange: (v: number) => void; min: number; max: number; step: number; unit: string; defaultVal: number; description?: string }) => {
     const isDefault = value === defaultVal;
     return (
-      <div style={{ marginBottom: 16, padding: 12, background: 'rgba(74,222,128,0.04)', borderRadius: 10, border: '1px solid rgba(74,222,128,0.12)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+      <div style={{ marginBottom: 16, padding: 12, background: 'rgba(74,222,128,0.04)', borderRadius: 10, border: '1px solid rgba(74,222,128,0.12)', minHeight: 120 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4, minHeight: 22 }}>
           <span style={{ fontSize: 12, fontWeight: 600, color: BRAND.greenSave, fontFamily: 'Arial, sans-serif' }}>{label}</span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
             <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif' }}>{value}{unit}</span>
             {!isDefault && (
               <button onClick={() => onChange(defaultVal)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 2, display: 'flex', alignItems: 'center' }} title="Reset to projected value">
@@ -395,7 +395,7 @@ const ROICalculator = () => {
             )}
           </div>
         </div>
-        {description && <p style={{ ...s.hint, color: 'rgba(74,222,128,0.5)', marginBottom: 6 }}>{description}</p>}
+        {description && <p style={{ ...s.hint, color: 'rgba(74,222,128,0.5)', marginBottom: 6, minHeight: 16 }}>{description}</p>}
         <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => onChange(parseFloat(e.target.value))} style={{ ...s.slider, accentColor: BRAND.greenSave }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, color: BRAND.textMuted, marginTop: 2 }}><span>{min}{unit}</span><span>{max}{unit}</span></div>
       </div>
