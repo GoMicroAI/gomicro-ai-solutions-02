@@ -38,7 +38,7 @@ const HeroSection = () => {
               <a
                 key={cat.id}
                 href={`#${cat.id}`}
-                className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-primary/60 bg-primary/20 backdrop-blur-md hover:bg-primary/30 transition-colors"
+                className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-yellow-400/60 bg-primary/20 backdrop-blur-md hover:bg-primary/30 shadow-[0_0_15px_rgba(250,204,21,0.3),0_0_30px_rgba(250,204,21,0.15)] hover:shadow-[0_0_20px_rgba(250,204,21,0.4),0_0_40px_rgba(250,204,21,0.25)] transition-all"
               >
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-primary/70 bg-black flex items-center justify-center">
                   <cat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
