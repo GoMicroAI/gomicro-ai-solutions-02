@@ -129,13 +129,25 @@ const SolutionsSection = () => {
                 {/* Image */}
                 <div className="w-full lg:w-1/2">
                   <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                    <img 
-                      src={solution.image} 
-                      alt={solution.imageAlt} 
-                      className="w-full h-auto object-contain" 
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    {solution.id === "fruits-veg" ? (
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto object-contain"
+                      >
+                        <source src="/videos/spinach-video.mp4" type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img 
+                        src={solution.image} 
+                        alt={solution.imageAlt} 
+                        className="w-full h-auto object-contain" 
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
                     {/* Subtle overlay for cohesion */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                   </div>
