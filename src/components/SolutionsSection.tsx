@@ -145,9 +145,14 @@ const SolutionsSection = () => {
                   </ul>
 
                   {/* CTA */}
-                  <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
-                    <a href="#contact">Learn More</a>
-                  </Button>
+                  <div className="flex gap-3">
+                    <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
+                      <a href="#contact">Learn More</a>
+                    </Button>
+                    <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
+                      <a href="#contact">Watch Video</a>
+                    </Button>
+                  </div>
                 </div>
               </div>
               
