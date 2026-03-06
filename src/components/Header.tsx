@@ -27,7 +27,7 @@ const Header = () => {
       <div className="bg-primary text-primary-foreground py-1.5 overflow-hidden">
         <div className="flex animate-scroll-banner">
           {[...Array(2)].map((_, i) =>
-          <span key={i} className="flex-shrink-0 px-4 text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap">
+          <span key={i} className="flex-shrink-0 text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap">
               Super Human HC &nbsp;•&nbsp; More Accurate &nbsp;•&nbsp; Faster &nbsp;•&nbsp; Lower Cost &nbsp;•&nbsp; Lower Rejection Risk &nbsp;•&nbsp; NEW: QC Cost Calculator &nbsp;•&nbsp;
             </span>)}
         </div>
