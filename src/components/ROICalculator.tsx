@@ -568,7 +568,7 @@ const ROICalculator = () => {
               onMouseEnter={(e) => { (e.target as HTMLElement).style.transform = 'scale(1.03)'; }}
               onMouseLeave={(e) => { (e.target as HTMLElement).style.transform = 'scale(1)'; }}
             >
-              <Sparkles style={{ width: 20, height: 20 }} /> Find Out Your AI Savings
+              <Sparkles style={{ width: 20, height: 20 }} /> Find Out Your AI QC Savings
             </button>
           </div>
         )}
