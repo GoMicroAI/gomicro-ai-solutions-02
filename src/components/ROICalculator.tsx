@@ -439,7 +439,7 @@ const ROICalculator = () => {
             Find Your True Cost of Quality Control in Minutes
           </p>
           <p style={{ fontSize: 14, color: BRAND.textMuted, marginTop: 6, fontFamily: 'Arial, sans-serif' }}>
-            Leafy greens — lettuce, spinach, rocket, kale, herbs
+            Leafy greens calculator — lettuce, spinach, rocket, kale, herbs
           </p>
         </div>
 
