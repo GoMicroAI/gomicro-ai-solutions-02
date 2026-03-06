@@ -707,9 +707,6 @@ const ROICalculator = () => {
           </div>
         )}
 
-        <p style={{ textAlign: 'center', fontSize: 11, color: BRAND.textMuted, marginTop: 24 }}>
-          <a href="https://www.gomicro.ai" target="_blank" rel="noopener noreferrer" style={{ color: BRAND.gold, textDecoration: 'none' }}>www.gomicro.ai</a>
-        </p>
       </div>
 
       {/* EMAIL CAPTURE MODAL */}
