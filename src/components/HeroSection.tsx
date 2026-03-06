@@ -29,7 +29,7 @@ const HeroSection = () => {
         {/* Text Content */}
         <div className="animate-fade-in-up flex flex-col items-center lg:items-start">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-foreground leading-tight mb-4">
-            <span className="text-white [text-shadow:_0_0_20px_hsl(var(--primary)/0.5)]">Quality Intelligence</span>
+            <span className="text-white [text-shadow:_0_0_10px_rgba(250,204,21,0.6),0_0_30px_rgba(250,204,21,0.3),0_0_50px_rgba(250,204,21,0.15)]">Quality Intelligence</span>
           </h1>
           
           {/* Category Buttons */}
