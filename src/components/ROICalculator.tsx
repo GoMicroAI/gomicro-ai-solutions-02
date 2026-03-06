@@ -132,13 +132,13 @@ const SegmentSlider = ({ visual, recording, other, onChange }: { visual: number;
   }, [visual, recording, other, onChange]);
 
   return (
-    <div style={{ marginTop: 16, padding: 12, paddingTop: 20, borderRadius: 10, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+    <div style={{ marginTop: 16, padding: 12, borderRadius: 10, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
         <span style={{ fontSize: 13, fontWeight: 600, color: BRAND.textSecondary, fontFamily: 'Arial, sans-serif' }}>Visual Inspection & Recording</span>
         
       </div>
       <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 10 }}>% of QC time on visual inspection + record keeping</p>
-      <div style={{ display: 'flex', fontSize: 10, fontWeight: 600, marginBottom: 4, marginTop: 30, userSelect: 'none', fontFamily: 'Arial, sans-serif' }}>
+      <div style={{ display: 'flex', fontSize: 10, fontWeight: 600, marginBottom: 4, marginTop: 10, userSelect: 'none', fontFamily: 'Arial, sans-serif' }}>
         <span style={{ width: `${combined}%`, textAlign: 'center', color: '#F6AD55', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Insp. & Recording</span>
         <span style={{ width: `${other}%`, textAlign: 'center', color: '#68D391', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Other Activities</span>
       </div>
