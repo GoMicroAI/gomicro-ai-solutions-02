@@ -576,27 +576,27 @@ const ROICalculator = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16, marginBottom: 16 }}>
               {/* AIQC Labour */}
-              <div style={{ ...s.card, border: '1px solid rgba(74,222,128,0.15)' }}>
-                <div style={{ ...s.sectionLabel, color: BRAND.greenSave }}>
+              <div style={{ ...s.card, border: '1px solid rgba(74,222,128,0.15)', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ ...s.sectionLabel, color: BRAND.greenSave, marginBottom: 16 }}>
                   <Users style={{ width: 14, height: 14 }} /> Labour With AI QC
                 </div>
                 <AiqcSlider label="QC Labour Reduction" value={aiqcLabourReduction} onChange={setAiqcLabourReduction} min={20} max={95} step={5} unit="%" defaultVal={AIQC_DEFAULTS.labourReductionPct} description="% of QC labour hours automated by AI QC" />
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0' }}>
                   <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Current Labour Cost</span>
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.redCost, textDecoration: 'line-through', fontFamily: 'Georgia, serif' }}>{fmt(results.annualLabour)}</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0' }}>
                   <span style={{ ...s.label, color: BRAND.greenSave }}>With AI QC</span>
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif' }}><AnimatedNumber value={results.aiqcLabourCost} /></span>
                 </div>
-                <div style={{ padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, marginTop: 8, textAlign: 'center' }}>
+                <div style={{ marginTop: 'auto', padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, textAlign: 'center' }}>
                   <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.labourSaved} /> / year on labour costs</span>
                 </div>
               </div>
 
               {/* AIQC Rejections */}
-              <div style={{ ...s.card, border: '1px solid rgba(74,222,128,0.15)' }}>
-                <div style={{ ...s.sectionLabel, color: BRAND.greenSave }}>
+              <div style={{ ...s.card, border: '1px solid rgba(74,222,128,0.15)', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ ...s.sectionLabel, color: BRAND.greenSave, marginBottom: 16 }}>
                   <BarChart3 style={{ width: 14, height: 14 }} /> Rejections With AI QC
                 </div>
                  <AiqcSlider label="QC-Error Rejection Rate After AI QC" value={aiqcQcErrorPct} onChange={setAiqcQcErrorPct} min={5} max={qcErrorPct} step={5} unit="%" defaultVal={AIQC_DEFAULTS.qcErrorPct} description="AI QC reduces QC-caused rejections — handling stays the same" />
@@ -604,7 +604,7 @@ const ROICalculator = () => {
                    <AlertTriangle style={{ width: 11, height: 11 }} /> Handling rejections ({handlingPct}%) are unaffected by AI QC
                 </p>
                 <RejectionBarChart currentQcPct={qcErrorPct} currentHandlingPct={handlingPct} aiqcQcPct={aiqcQcErrorPct} aiqcHandlingPct={handlingPct} showAiqc={true} totalRejectCost={results.totalRejectCost} />
-                <div style={{ padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, marginTop: 12, textAlign: 'center' }}>
+                <div style={{ marginTop: 'auto', padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, textAlign: 'center' }}>
                   <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.rejectSaved} /> / year on rejections</span>
                 </div>
               </div>
