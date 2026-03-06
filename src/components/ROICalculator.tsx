@@ -446,7 +446,7 @@ const ROICalculator = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16, marginBottom: 16 }}>
           {/* QC Labour */}
           <div style={{ ...s.card, display: 'flex', flexDirection: 'column' }}>
-            <div style={{ ...s.sectionLabel, color: BRAND.gold }}>
+            <div style={{ ...s.sectionLabel, color: BRAND.gold, marginBottom: 16 }}>
               <Users style={{ width: 14, height: 14 }} /> QC Labour Cost
             </div>
             <BoxInput label="QC Staff" value={qcStaff} onChange={setQcStaff} unit="ppl" width={72} step="0.5" hint="People doing QC" />
@@ -456,7 +456,7 @@ const ROICalculator = () => {
             <div style={{ marginTop: 'auto' }}>
               <SegmentSlider visual={segments.visual} recording={segments.recording} other={segments.other} onChange={setSegments} />
             </div>
-            <div style={{ padding: 12, borderRadius: 10, background: BRAND.redBg, border: `1px solid ${BRAND.redBorder}` }}>
+            <div style={{ marginTop: 'auto', padding: 12, borderRadius: 10, background: BRAND.redBg, border: `1px solid ${BRAND.redBorder}` }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Annual QC Labour Cost</span>
                 <span style={{ fontSize: 22, fontWeight: 700, color: BRAND.redCost, fontFamily: 'Georgia, serif' }}>
