@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Wheat, Apple, CheckCircle, ShieldCheck, Zap, DollarSign, Calculator } from "lucide-react";
 import { Link } from "react-router-dom";
 import AlmondIcon from "@/components/icons/AlmondIcon";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import grainsMachine from "@/assets/grains-machine.png";
 import nutsMachine from "@/assets/nuts-machine.png";
 import spinachQc from "@/assets/spinach-qc.jpeg";
@@ -37,7 +39,22 @@ const solutions = [{
 }];
 
 const SolutionsSection = () => {
-  return <section id="solutions" className="py-24 lg:py-32 bg-background">
+  const [videoOpen, setVideoOpen] = useState(false);
+
+  return <>
+    <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
+      <DialogContent className="sm:max-w-4xl p-0 bg-black border-none overflow-hidden">
+        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+          <iframe
+            src="https://drive.google.com/file/d/1XpnCr_Q4iwGg2p1C5bYTNgVhFxoRakQm/preview"
+            className="absolute inset-0 w-full h-full"
+            allow="autoplay"
+            allowFullScreen
+          />
+        </div>
+      </DialogContent>
+    </Dialog>
+    <section id="solutions" className="py-24 lg:py-32 bg-background">
       {/* Top separator line */}
       <div className="w-full h-px bg-border mb-16 lg:mb-24" />
       
@@ -161,6 +178,11 @@ const SolutionsSection = () => {
                     <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
                       <a href="#contact">Learn More</a>
                     </Button>
+                    {solution.id === "fruits-veg" && (
+                      <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" onClick={() => setVideoOpen(true)}>
+                        Watch Video
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -176,6 +198,7 @@ const SolutionsSection = () => {
         {/* Line after Fruits & Vegetables section */}
         <div className="w-full h-px bg-border mt-16 lg:mt-24" />
       </div>
-    </section>;
+    </section>
+  </>;
 };
 export default SolutionsSection;
