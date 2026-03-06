@@ -48,7 +48,7 @@ const SolutionsSection = () => {
           <div className="w-full max-w-[1100px]">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {/* Reduce Rejections */}
-              <div className="group relative px-8 py-8 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 border-2 border-primary/30 shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/50 hover:scale-105 transition-all duration-300 cursor-default">
+              <div className="group relative px-8 py-8 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 border-2 border-yellow-400/50 shadow-[0_0_15px_rgba(250,204,21,0.3),0_0_30px_rgba(250,204,21,0.15)] hover:shadow-[0_0_20px_rgba(250,204,21,0.4),0_0_40px_rgba(250,204,21,0.25)] hover:border-yellow-400/70 hover:scale-105 transition-all duration-300 cursor-default">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative flex flex-col items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
@@ -59,7 +59,7 @@ const SolutionsSection = () => {
               </div>
               
               {/* Speed up your QC */}
-              <div className="group relative px-8 py-8 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 border-2 border-primary/30 shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/50 hover:scale-105 transition-all duration-300 cursor-default">
+              <div className="group relative px-8 py-8 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 border-2 border-yellow-400/50 shadow-[0_0_15px_rgba(250,204,21,0.3),0_0_30px_rgba(250,204,21,0.15)] hover:shadow-[0_0_20px_rgba(250,204,21,0.4),0_0_40px_rgba(250,204,21,0.25)] hover:border-yellow-400/70 hover:scale-105 transition-all duration-300 cursor-default">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative flex flex-col items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
@@ -70,7 +70,7 @@ const SolutionsSection = () => {
               </div>
               
               {/* Reduce QC Cost */}
-              <div className="group relative px-8 py-8 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 border-2 border-primary/30 shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/50 hover:scale-105 transition-all duration-300 cursor-default">
+              <div className="group relative px-8 py-8 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 border-2 border-yellow-400/50 shadow-[0_0_15px_rgba(250,204,21,0.3),0_0_30px_rgba(250,204,21,0.15)] hover:shadow-[0_0_20px_rgba(250,204,21,0.4),0_0_40px_rgba(250,204,21,0.25)] hover:border-yellow-400/70 hover:scale-105 transition-all duration-300 cursor-default">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative flex flex-col items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
