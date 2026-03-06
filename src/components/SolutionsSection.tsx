@@ -166,9 +166,11 @@ const SolutionsSection = () => {
                     <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" asChild>
                       <a href="#contact">Learn More</a>
                     </Button>
-                    <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" onClick={() => setVideoOpen(true)}>
-                      Watch Video
-                    </Button>
+                    {solution.id === "fruits-veg" && (
+                      <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground" onClick={() => setVideoOpen(true)}>
+                        Watch Video
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
