@@ -32,6 +32,11 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Solutions</h3>
             <ul className="space-y-3">
               <li>
+                <Link to="/qc-calculator" className="text-muted-foreground hover:text-primary transition-colors font-medium">
+                  QC Cost Calculator
+                </Link>
+              </li>
+              <li>
                 <a href={getNavHref("solutions")} className="text-muted-foreground hover:text-primary transition-colors">
                   Grains
                 </a>
@@ -45,11 +50,6 @@ const Footer = () => {
                 <a href={getNavHref("solutions")} className="text-muted-foreground hover:text-primary transition-colors">
                   Fruits & Vegetables
                 </a>
-              </li>
-              <li>
-                <Link to="/qc-calculator" className="text-muted-foreground hover:text-primary transition-colors">
-                  QC Cost Calculator
-                </Link>
               </li>
             </ul>
           </div>
