@@ -186,7 +186,7 @@ const RejectionCauseSplitSlider = ({ qcErrorPct, handlingPct, onChange }: { qcEr
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
         <span style={{ fontSize: 12, fontWeight: 600, color: BRAND.textSecondary, fontFamily: 'Arial, sans-serif' }}>Rejection Cause Split</span>
       </div>
-      <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 10 }}>What percentage of rejections are due to QC errors vs handling issues?</p>
+      <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 10 }}>What percentage of rejections are due to QC errors vs handling issues? (refrigeration, late trucks, rough handling)</p>
       <div style={{ display: 'flex', fontSize: 10, fontWeight: 600, marginBottom: 4, userSelect: 'none', fontFamily: 'Arial, sans-serif' }}>
         <span style={{ width: `${qcErrorPct}%`, textAlign: 'center', color: '#F6AD55' }}>QC Errors</span>
         <span style={{ width: `${handlingPct}%`, textAlign: 'center', color: '#68D391' }}>Handling</span>
@@ -202,7 +202,7 @@ const RejectionCauseSplitSlider = ({ qcErrorPct, handlingPct, onChange }: { qcEr
           {handlingPct}%
         </div>
       </div>
-      <p style={{ fontSize: 10, color: BRAND.textMuted, marginTop: 6 }}>Handling = refrigeration, late trucks, rough handling</p>
+      
     </div>
   );
 };
