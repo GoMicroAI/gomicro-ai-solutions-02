@@ -157,7 +157,7 @@ const SolutionsSection = () => {
                         </video>
                         <button
                           onClick={togglePlayPause}
-                          className="absolute bottom-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-opacity opacity-0 group-hover:opacity-100"
+                          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
                           aria-label={isPlaying ? "Pause video" : "Play video"}
                         >
                           {isPlaying ? (
