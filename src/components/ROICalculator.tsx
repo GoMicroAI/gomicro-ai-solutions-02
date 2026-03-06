@@ -149,9 +149,6 @@ const SegmentSlider = ({ visual, recording, other, onChange }: { visual: number;
         </div>
         <div style={{ width: `${other}%`, height: '100%', background: '#2F855A', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 12, fontWeight: 700, transition: 'width 75ms' }}>{other}%</div>
       </div>
-      <p style={{ fontSize: 10, color: 'rgba(74,222,128,0.6)', marginTop: 6, display: 'flex', alignItems: 'center', gap: 4 }}>
-        <CheckCircle style={{ width: 10, height: 10 }} /> GoMicro automates Visual Inspection & Recording ({combined}% of QC time)
-      </p>
     </div>
   );
 };
