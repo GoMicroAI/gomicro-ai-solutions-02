@@ -132,7 +132,7 @@ const SegmentSlider = ({ visual, recording, other, onChange }: { visual: number;
   }, [visual, recording, other, onChange]);
 
   return (
-    <div style={{ marginBottom: 20 }}>
+    <div style={{ marginTop: 16, padding: 12, borderRadius: 10, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
         <span style={{ fontSize: 13, fontWeight: 600, color: BRAND.textSecondary, fontFamily: 'Arial, sans-serif' }}>Visual Inspection & Recording</span>
         <span style={{ fontSize: 20, fontWeight: 700, color: BRAND.gold, fontFamily: 'Georgia, serif' }}>{combined} %</span>
