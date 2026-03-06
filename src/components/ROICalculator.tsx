@@ -667,7 +667,7 @@ const ROICalculator = () => {
               >
                 <FileText style={{ width: 18, height: 18 }} /> Generate Your Savings Report + 5% Discount
               </button>
-              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 8 }}>We'll email you a personalised PDF breakdown</p>
+              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 8 }}>We'll email you a personalised breakdown</p>
             </div>
 
             {/* Assumptions toggle */}
