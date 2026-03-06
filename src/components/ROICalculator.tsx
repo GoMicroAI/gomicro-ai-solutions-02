@@ -368,12 +368,12 @@ const ROICalculator = () => {
   );
 
   const BoxInput = ({ label, value, onChange, unit, width, hint, step: inputStep = 'any' }: { label: string; value: number; onChange: (v: number) => void; unit?: string; width?: number; hint?: string; step?: string }) => (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 0' }}>
-      <div>
+    <div style={{ display: 'flex', alignItems: 'center', padding: '8px 0', gap: 12 }}>
+      <div style={{ flex: 1 }}>
         <span style={s.label}>{label}</span>
         {hint && <p style={{ ...s.hint, marginTop: 1 }}>{hint}</p>}
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
         <input type="number" value={value} step={inputStep} onChange={(e) => onChange(parseFloat(e.target.value) || 0)} style={{ ...s.input, width: width || 80 }} />
         {unit && <span style={{ fontSize: 11, color: BRAND.textMuted, width: 32 }}>{unit}</span>}
       </div>
