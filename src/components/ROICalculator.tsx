@@ -581,11 +581,11 @@ const ROICalculator = () => {
                   <Users style={{ width: 14, height: 14 }} /> Labour With AI QC
                 </div>
                 <AiqcSlider label="QC Labour Reduction" value={aiqcLabourReduction} onChange={setAiqcLabourReduction} min={20} max={95} step={5} unit="%" defaultVal={AIQC_DEFAULTS.labourReductionPct} description="% of QC labour hours automated by AI QC" />
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0', marginTop: 20 }}>
                   <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Current</span>
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.redCost, textDecoration: 'line-through', textDecorationColor: BRAND.redCost, fontFamily: 'Georgia, serif' }}>{fmt(results.annualLabour)}</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0', marginTop: 40 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0', marginTop: 58 }}>
                   <span style={{ fontSize: 13, color: BRAND.greenSave, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>With AI QC</span>
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif' }}><AnimatedNumber value={results.aiqcLabourCost} /></span>
                 </div>
