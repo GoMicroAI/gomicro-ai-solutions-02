@@ -3,7 +3,7 @@ import { TrendingUp, Users, Target, ChevronDown, ChevronUp, Truck, PercentIcon, 
 
 const LEAFY_GREENS_COST_PER_KG = 4;
 const CALENDLY_URL = "https://calendar.app.google/eadGAQFJjJNzFKbS6";
-const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzAjKrt-oBE-fF-Ycl6jRxj5fTeguLLCP17P75YDHFKJjXhs64NPVZ1R73eHiRmmTZUIQ/exec";
+const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwCQRfblsP09BHgMQCNABwTVLgHy1jc6YW6gUCV1nbze7aN_lSZaoQ7NGfZuNdKLQlH/exec";
 
 const BRAND = {
   darkTeal: '#1E3932',
