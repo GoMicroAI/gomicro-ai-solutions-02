@@ -137,17 +137,17 @@ const SegmentSlider = ({ visual, recording, other, onChange }: { visual: number;
         <span style={{ fontSize: 13, fontWeight: 600, color: BRAND.textSecondary, fontFamily: 'Arial, sans-serif' }}>Visual Inspection & Recording</span>
         
       </div>
-      <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 20 }}>% of QC time on visual inspection + record keeping</p>
-      <div style={{ display: 'flex', fontSize: 10, fontWeight: 600, marginBottom: 4, userSelect: 'none' }}>
+      <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 10 }}>% of QC time on visual inspection + record keeping</p>
+      <div style={{ display: 'flex', fontSize: 10, fontWeight: 600, marginBottom: 4, userSelect: 'none', fontFamily: 'Arial, sans-serif' }}>
         <span style={{ width: `${combined}%`, textAlign: 'center', color: '#F6AD55', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Insp. & Recording</span>
         <span style={{ width: `${other}%`, textAlign: 'center', color: '#68D391', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Other Activities</span>
       </div>
-      <div ref={barRef} style={{ position: 'relative', height: 36, borderRadius: 8, display: 'flex', cursor: 'default', userSelect: 'none', touchAction: 'none' }}>
-        <div style={{ width: `${combined}%`, height: '100%', background: '#DD6B20', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 12, fontWeight: 700, transition: 'width 75ms' }}>{combined}%</div>
+      <div ref={barRef} style={{ position: 'relative', height: 36, borderRadius: 8, display: 'flex', cursor: 'default', userSelect: 'none', touchAction: 'none', overflow: 'visible' }}>
+        <div style={{ width: `${combined}%`, height: '100%', background: '#DD6B20', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 13, fontWeight: 700, transition: 'width 75ms', fontFamily: 'Arial, sans-serif' }}>{combined}%</div>
         <div onPointerDown={handlePointerDown} style={{ position: 'absolute', top: 0, bottom: 0, left: `${combined}%`, transform: 'translateX(-50%)', zIndex: 10, display: 'flex', alignItems: 'center', cursor: 'col-resize' }}>
-          <div style={{ width: 10, height: 36, background: '#fff', borderRadius: 3, boxShadow: '0 1px 4px rgba(0,0,0,0.4)' }} />
+          <div style={{ width: 12, height: 36, background: '#fff', borderRadius: 3, boxShadow: '0 2px 6px rgba(0,0,0,0.4)', border: '1px solid rgba(0,0,0,0.15)' }} />
         </div>
-        <div style={{ width: `${other}%`, height: '100%', background: '#2F855A', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 12, fontWeight: 700, transition: 'width 75ms' }}>{other}%</div>
+        <div style={{ width: `${other}%`, height: '100%', background: '#2F855A', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 13, fontWeight: 700, transition: 'width 75ms', fontFamily: 'Arial, sans-serif' }}>{other}%</div>
       </div>
     </div>
   );
