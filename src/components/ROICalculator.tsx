@@ -137,7 +137,7 @@ const SegmentSlider = ({ visual, recording, other, onChange }: { visual: number;
         <span style={{ fontSize: 13, fontWeight: 600, color: BRAND.textSecondary, fontFamily: 'Arial, sans-serif' }}>Visual Inspection & Recording</span>
         
       </div>
-      <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 4 }}>% of QC time on visual inspection + record keeping</p>
+      <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 0 }}>% of QC time on visual inspection + record keeping</p>
       <div style={{ display: 'flex', fontSize: 10, fontWeight: 600, marginBottom: 4, marginTop: 'auto', userSelect: 'none', fontFamily: 'Arial, sans-serif' }}>
         <span style={{ width: `${combined}%`, textAlign: 'center', color: '#F6AD55', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Insp. & Recording</span>
         <span style={{ width: `${other}%`, textAlign: 'center', color: '#68D391', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Other Activities</span>
@@ -186,7 +186,7 @@ const RejectionCauseSplitSlider = ({ qcErrorPct, handlingPct, onChange }: { qcEr
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
         <span style={{ fontSize: 13, fontWeight: 600, color: BRAND.textSecondary, fontFamily: 'Arial, sans-serif' }}>Rejection Cause Split</span>
       </div>
-      <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 4 }}>What percentage of rejections are due to QC errors vs handling issues? (refrigeration, late trucks, rough handling)</p>
+      <p style={{ fontSize: 11, color: BRAND.textMuted, marginBottom: 0 }}>What percentage of rejections are due to QC errors vs handling issues? (refrigeration, late trucks, rough handling)</p>
       <div style={{ display: 'flex', fontSize: 10, fontWeight: 600, marginBottom: 4, marginTop: 'auto', userSelect: 'none', fontFamily: 'Arial, sans-serif' }}>
         <span style={{ width: `${qcErrorPct}%`, textAlign: 'center', color: '#F6AD55', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>QC Errors</span>
         <span style={{ width: `${handlingPct}%`, textAlign: 'center', color: '#68D391', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 2px' }}>Handling</span>
