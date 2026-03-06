@@ -582,7 +582,7 @@ const ROICalculator = () => {
                 </div>
                 <AiqcSlider label="QC Labour Reduction" value={aiqcLabourReduction} onChange={setAiqcLabourReduction} min={20} max={95} step={5} unit="%" defaultVal={AIQC_DEFAULTS.labourReductionPct} description="% of QC labour hours automated by AI QC" />
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0' }}>
-                  <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Current Labour Cost</span>
+                  <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Current</span>
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.redCost, textDecoration: 'line-through', fontFamily: 'Georgia, serif' }}>{fmt(results.annualLabour)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0' }}>
