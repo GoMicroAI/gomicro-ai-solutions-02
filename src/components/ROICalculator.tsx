@@ -435,7 +435,10 @@ const ROICalculator = () => {
           <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 36, fontWeight: 700, color: BRAND.cream, margin: 0, lineHeight: 1.2 }}>
             Calculate Your QC Cost
           </h1>
-          <p style={{ fontSize: 14, color: BRAND.textMuted, marginTop: 8, fontFamily: 'Arial, sans-serif' }}>
+          <p style={{ fontSize: 16, color: BRAND.textSecondary, marginTop: 8, fontFamily: 'Arial, sans-serif' }}>
+            Find Your True Cost of Quality Control in Minutes
+          </p>
+          <p style={{ fontSize: 14, color: BRAND.textMuted, marginTop: 6, fontFamily: 'Arial, sans-serif' }}>
             Leafy greens — lettuce, spinach, rocket, kale, herbs
           </p>
         </div>
