@@ -525,10 +525,10 @@ const ROICalculator = () => {
             Your Total Annual QC Cost{results.isSeasonal ? ` (${weeksPerYear}-week season)` : ''}
           </p>
           <p style={{ fontSize: 48, fontWeight: 700, color: BRAND.redCost, fontFamily: 'Georgia, serif', margin: '0 0 8px 0', lineHeight: 1 }}>
-            <AnimatedNumber value={results.totalCurrentCost} />
+            <AnimatedNumber value={results.annualLabour * (automatedPct / 100) + results.qcErrorCost} />
           </p>
           <p style={{ fontSize: 13, color: BRAND.textMuted, fontFamily: 'Arial, sans-serif' }}>
-            Labour {fmt(results.annualLabour)} + Rejections {fmt(results.totalRejectCost)}
+            Labour {fmt(results.annualLabour * (automatedPct / 100))} + QC Error Rejections {fmt(results.qcErrorCost)}
           </p>
         </div>
 
