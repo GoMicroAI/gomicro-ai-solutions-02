@@ -583,14 +583,14 @@ const ROICalculator = () => {
                 <AiqcSlider label="QC Labour Reduction" value={aiqcLabourReduction} onChange={setAiqcLabourReduction} min={20} max={95} step={5} unit="%" defaultVal={AIQC_DEFAULTS.labourReductionPct} description="% of QC labour hours automated by AI QC" />
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4, marginTop: 24 }}>
                   <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Current</span>
-                  <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.redCost, textDecoration: 'line-through', textDecorationColor: BRAND.redCost, fontFamily: 'Georgia, serif' }}>{fmt(results.annualLabour)}</span>
+                  <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.redCost, textDecoration: 'line-through', textDecorationColor: BRAND.redCost, fontFamily: 'Georgia, serif' }}>{fmt(results.annualLabour * (automatedPct / 100))}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4, marginTop: 44 }}>
                   <span style={{ fontSize: 13, color: BRAND.greenSave, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>With AI QC</span>
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif' }}><AnimatedNumber value={results.aiqcLabourCost} /></span>
                 </div>
                 <div style={{ marginTop: 'auto', padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, textAlign: 'center' }}>
-                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.labourSaved} /> / year on labour costs</span>
+                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.annualLabour * (automatedPct / 100) - results.aiqcLabourCost} /> / year on labour costs</span>
                 </div>
               </div>
 
