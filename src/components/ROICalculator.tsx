@@ -402,65 +402,7 @@ const ROICalculator = () => {
     setShowAiqc(false);
   };
 
-  const s = {
-    page: { minHeight: '100vh', background: `linear-gradient(165deg, ${BRAND.darkBg} 0%, #0A1612 40%, ${BRAND.darkBg} 100%)`, padding: '24px 16px', fontFamily: 'Arial, sans-serif' } as React.CSSProperties,
-    container: { maxWidth: 960, margin: '0 auto' } as React.CSSProperties,
-    card: { background: BRAND.cardBg, border: `1px solid ${BRAND.cardBorder}`, borderRadius: 16, padding: 24, marginBottom: 16 } as React.CSSProperties,
-    sectionLabel: { fontSize: 11, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: BRAND.gold, marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'Arial, sans-serif' } as React.CSSProperties,
-    label: { fontSize: 13, fontWeight: 600, color: BRAND.textSecondary, fontFamily: 'Arial, sans-serif' } as React.CSSProperties,
-    value: { fontSize: 18, fontWeight: 700, color: BRAND.gold, fontFamily: 'Georgia, serif' } as React.CSSProperties,
-    input: { background: BRAND.inputBg, border: `1px solid ${BRAND.inputBorder}`, borderRadius: 8, color: BRAND.textPrimary, padding: '8px 12px', fontSize: 14, fontFamily: 'Arial, sans-serif', outline: 'none', textAlign: 'right' as const, width: 80 } as React.CSSProperties,
-    slider: { width: '100%', height: 6, borderRadius: 3, appearance: 'none' as const, cursor: 'pointer', background: BRAND.inputBorder, accentColor: BRAND.gold } as React.CSSProperties,
-    hint: { fontSize: 11, color: BRAND.textMuted, marginTop: 2, fontFamily: 'Arial, sans-serif' } as React.CSSProperties,
-    grid4: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 } as React.CSSProperties,
-  };
-
-  const SliderInput = ({ label, value, onChange, min, max, step, unit, description }: { label: string; value: number; onChange: (v: number) => void; min: number; max: number; step: number; unit: string; description?: string }) => (
-    <div style={{ marginBottom: 20 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 6 }}>
-        <span style={s.label}>{label}</span>
-        <span style={{ ...s.value, fontSize: 20 }}>{value}{unit}</span>
-      </div>
-      {description && <p style={s.hint}>{description}</p>}
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => onChange(parseFloat(e.target.value))} style={{ ...s.slider, marginTop: 8 }} />
-      <div style={{ display: 'flex', justifyContent: 'space-between', ...s.hint, marginTop: 4 }}><span>{min}{unit}</span><span>{max}{unit}</span></div>
-    </div>
-  );
-
-  const BoxInput = ({ label, value, onChange, unit, width, hint, step: inputStep = 'any' }: { label: string; value: number; onChange: (v: number) => void; unit?: string; width?: number; hint?: string; step?: string }) => (
-    <div style={{ display: 'flex', alignItems: 'center', padding: '8px 0', gap: 12 }}>
-      <div style={{ flex: 1 }}>
-        <span style={s.label}>{label}</span>
-        {hint && <p style={{ ...s.hint, marginTop: 1 }}>{hint}</p>}
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
-        <input type="number" value={value} step={inputStep} onChange={(e) => onChange(parseFloat(e.target.value) || 0)} style={{ ...s.input, width: width || 80 }} />
-        {unit && <span style={{ fontSize: 11, color: BRAND.textMuted, width: 32 }}>{unit}</span>}
-      </div>
-    </div>
-  );
-
-  const AiqcSlider = ({ label, value, onChange, min, max, step, unit, defaultVal, description }: { label: string; value: number; onChange: (v: number) => void; min: number; max: number; step: number; unit: string; defaultVal: number; description?: string }) => {
-    const isDefault = value === defaultVal;
-    return (
-      <div style={{ marginBottom: 16, padding: 12, background: 'rgba(74,222,128,0.04)', borderRadius: 10, border: '1px solid rgba(74,222,128,0.12)', minHeight: 120 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4, minHeight: 22 }}>
-          <span style={{ fontSize: 12, fontWeight: 600, color: BRAND.greenSave, fontFamily: 'Arial, sans-serif' }}>{label}</span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
-            <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif' }}>{value}{unit}</span>
-            {!isDefault && (
-              <button onClick={() => onChange(defaultVal)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 2, display: 'flex', alignItems: 'center' }} title="Reset to projected value">
-                <RefreshCw style={{ width: 12, height: 12, color: BRAND.textMuted }} />
-              </button>
-            )}
-          </div>
-        </div>
-        {description && <p style={{ ...s.hint, color: 'rgba(74,222,128,0.5)', marginBottom: 6, minHeight: 16 }}>{description}</p>}
-        <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => onChange(parseFloat(e.target.value))} style={{ ...s.slider, accentColor: BRAND.greenSave }} />
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, color: BRAND.textMuted, marginTop: 2 }}><span>{min}{unit}</span><span>{max}{unit}</span></div>
-      </div>
-    );
-  };
+  const s = STYLES;
 
   return (
     <div style={s.page}>
