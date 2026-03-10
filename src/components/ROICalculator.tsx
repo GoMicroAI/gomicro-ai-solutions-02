@@ -460,10 +460,10 @@ const ROICalculator = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Annual QC Labour Cost</span>
                 <span style={{ fontSize: 22, fontWeight: 700, color: BRAND.redCost, fontFamily: 'Georgia, serif' }}>
-                  <AnimatedNumber value={results.annualLabour} />
+                  <AnimatedNumber value={results.annualLabour * (automatedPct / 100)} />
                 </span>
               </div>
-              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 4 }}>{qcStaff} staff × {qcHoursPerDay}hrs × {results.operatingDays} days × ${hourlyRate}/hr</p>
+              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 4 }}>{automatedPct}% Insp & Recording of {fmt(results.annualLabour)} total labour</p>
             </div>
           </div>
 
@@ -510,13 +510,11 @@ const ROICalculator = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Annual Rejection Cost</span>
                 <span style={{ fontSize: 22, fontWeight: 700, color: BRAND.redCost, fontFamily: 'Georgia, serif' }}>
-                  <AnimatedNumber value={results.totalRejectCost} />
+                  <AnimatedNumber value={results.qcErrorCost} />
                 </span>
               </div>
-              <div style={{ display: 'flex', gap: 16, marginTop: 6 }}>
-                <span style={{ fontSize: 11, color: BRAND.textMuted }}>QC errors: {fmt(results.qcErrorCost)}</span>
-                <span style={{ fontSize: 11, color: BRAND.textMuted }}>Handling: {fmt(results.handlingCost)}</span>
-              </div>
+              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 4 }}>{qcErrorPct}% QC Errors of {fmt(results.totalRejectCost)} total rejections</p>
+              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 2 }}>Handling: {fmt(results.handlingCost)} (not included)</p>
             </div>
           </div>
         </div>
@@ -527,10 +525,10 @@ const ROICalculator = () => {
             Your Total Annual QC Cost{results.isSeasonal ? ` (${weeksPerYear}-week season)` : ''}
           </p>
           <p style={{ fontSize: 48, fontWeight: 700, color: BRAND.redCost, fontFamily: 'Georgia, serif', margin: '0 0 8px 0', lineHeight: 1 }}>
-            <AnimatedNumber value={results.totalCurrentCost} />
+            <AnimatedNumber value={results.annualLabour * (automatedPct / 100) + results.qcErrorCost} />
           </p>
           <p style={{ fontSize: 13, color: BRAND.textMuted, fontFamily: 'Arial, sans-serif' }}>
-            Labour {fmt(results.annualLabour)} + Rejections {fmt(results.totalRejectCost)}
+            Labour {fmt(results.annualLabour * (automatedPct / 100))} + QC Error Rejections {fmt(results.qcErrorCost)}
           </p>
         </div>
 
@@ -585,14 +583,14 @@ const ROICalculator = () => {
                 <AiqcSlider label="QC Labour Reduction" value={aiqcLabourReduction} onChange={setAiqcLabourReduction} min={20} max={95} step={5} unit="%" defaultVal={AIQC_DEFAULTS.labourReductionPct} description="% of QC labour hours automated by AI QC" />
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4, marginTop: 24 }}>
                   <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Current</span>
-                  <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.redCost, textDecoration: 'line-through', textDecorationColor: BRAND.redCost, fontFamily: 'Georgia, serif' }}>{fmt(results.annualLabour)}</span>
+                  <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.redCost, textDecoration: 'line-through', textDecorationColor: BRAND.redCost, fontFamily: 'Georgia, serif' }}>{fmt(results.annualLabour * (automatedPct / 100))}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4, marginTop: 44 }}>
                   <span style={{ fontSize: 13, color: BRAND.greenSave, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>With AI QC</span>
                   <span style={{ fontSize: 18, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif' }}><AnimatedNumber value={results.aiqcLabourCost} /></span>
                 </div>
                 <div style={{ marginTop: 'auto', padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, textAlign: 'center' }}>
-                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.labourSaved} /> / year on labour costs</span>
+                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.annualLabour * (automatedPct / 100) - results.aiqcLabourCost} /> / year on labour costs</span>
                 </div>
               </div>
 
@@ -607,7 +605,7 @@ const ROICalculator = () => {
                 </p>
                 <RejectionBarChart currentQcPct={qcErrorPct} currentHandlingPct={handlingPct} aiqcQcPct={aiqcQcErrorPct} aiqcHandlingPct={handlingPct} showAiqc={true} totalRejectCost={results.totalRejectCost} />
                 <div style={{ marginTop: 'auto', padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, textAlign: 'center' }}>
-                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.rejectSaved} /> / year on rejections</span>
+                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.qcErrorCost - results.aiqcQcErrorCost} /> / year on QC error rejections</span>
                 </div>
               </div>
             </div>
@@ -618,19 +616,19 @@ const ROICalculator = () => {
                 <div>
                   <p style={{ fontSize: 11, fontWeight: 600, color: BRAND.redCost, textTransform: 'uppercase' as const, letterSpacing: '0.06em', marginBottom: 4 }}>Current QC Cost</p>
                   <p style={{ fontSize: 28, fontWeight: 700, color: BRAND.redCost, fontFamily: 'Georgia, serif', textDecoration: 'line-through', margin: 0 }}>
-                    <AnimatedNumber value={results.totalCurrentCost} />
+                    <AnimatedNumber value={results.annualLabour * (automatedPct / 100) + results.qcErrorCost} />
                   </p>
                 </div>
                 <div>
                   <p style={{ fontSize: 11, fontWeight: 600, color: BRAND.greenSave, textTransform: 'uppercase' as const, letterSpacing: '0.06em', marginBottom: 4 }}>QC Cost with AI QC</p>
                   <p style={{ fontSize: 28, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif', margin: 0 }}>
-                    <AnimatedNumber value={results.aiqcTotalCost} />
+                    <AnimatedNumber value={results.aiqcLabourCost + results.aiqcQcErrorCost} />
                   </p>
                 </div>
                 <div>
                   <p style={{ fontSize: 11, fontWeight: 600, color: BRAND.gold, textTransform: 'uppercase' as const, letterSpacing: '0.06em', marginBottom: 4 }}>Annual Savings</p>
                   <p style={{ fontSize: 28, fontWeight: 700, color: BRAND.gold, fontFamily: 'Georgia, serif', margin: 0 }}>
-                    <AnimatedNumber value={results.savings} />
+                    <AnimatedNumber value={(results.annualLabour * (automatedPct / 100) + results.qcErrorCost) - (results.aiqcLabourCost + results.aiqcQcErrorCost)} />
                   </p>
                 </div>
               </div>
