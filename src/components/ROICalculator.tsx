@@ -332,7 +332,7 @@ const ROICalculator = () => {
       savings, dailySavings, labourSaved: annualLabour - aiqcLabourCost, rejectSaved: totalRejectCost - aiqcTotalRejectCost,
       isSeasonal: weeksPerYear < 52,
     };
-  }, [qcHoursPerDay, rejectionRate, hourlyRate, daysPerWeek, weeksPerYear, volumePerWeek, volumePerDay, costPerReject, qcStaff, qcErrorPct, handlingPct, aiqcQcErrorPct, aiqcLabourReduction, rejectionMode, dispatchesPerMonth, kgPerDispatch, rejectedDispatches, markdownDispatches, markdownPct, truckValue]);
+  }, [qcHoursPerDay, rejectionRate, hourlyRate, daysPerWeek, weeksPerYear, volumePerWeek, volumePerDay, costPerReject, qcStaff, qcErrorPct, handlingPct, aiqcQcErrorPct, aiqcLabourReduction, automatedPct, rejectionMode, dispatchesPerMonth, kgPerDispatch, rejectedDispatches, markdownDispatches, markdownPct, truckValue]);
 
   const fmt = (n: number) => new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(n);
 
