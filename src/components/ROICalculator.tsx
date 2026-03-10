@@ -605,7 +605,7 @@ const ROICalculator = () => {
                 </p>
                 <RejectionBarChart currentQcPct={qcErrorPct} currentHandlingPct={handlingPct} aiqcQcPct={aiqcQcErrorPct} aiqcHandlingPct={handlingPct} showAiqc={true} totalRejectCost={results.totalRejectCost} />
                 <div style={{ marginTop: 'auto', padding: 10, borderRadius: 8, background: BRAND.goldBg, border: `1px solid ${BRAND.goldBorder}`, textAlign: 'center' }}>
-                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.rejectSaved} /> / year on rejections</span>
+                  <span style={{ fontSize: 18, color: BRAND.gold, fontWeight: 700, fontFamily: 'Georgia, serif' }}>Saving <AnimatedNumber value={results.qcErrorCost - results.aiqcQcErrorCost} /> / year on QC error rejections</span>
                 </div>
               </div>
             </div>
