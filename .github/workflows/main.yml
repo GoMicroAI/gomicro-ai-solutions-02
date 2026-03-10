@@ -23,6 +23,7 @@ jobs:
         run: |
           mkdir /tmp/build
           cp -r dist/* /tmp/build/
+          cp -a dist/.* /tmp/build/ 2>/dev/null || true
 
       - name: Publish to deploy branch
         run: |
@@ -34,6 +35,7 @@ jobs:
 
           rm -rf *
           cp -r /tmp/build/* .
+          cp -a /tmp/build/.* . 2>/dev/null || true
 
           git add .
           git commit -m "auto deploy build" || echo "no changes"
