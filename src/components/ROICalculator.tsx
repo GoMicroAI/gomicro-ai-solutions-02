@@ -616,19 +616,19 @@ const ROICalculator = () => {
                 <div>
                   <p style={{ fontSize: 11, fontWeight: 600, color: BRAND.redCost, textTransform: 'uppercase' as const, letterSpacing: '0.06em', marginBottom: 4 }}>Current QC Cost</p>
                   <p style={{ fontSize: 28, fontWeight: 700, color: BRAND.redCost, fontFamily: 'Georgia, serif', textDecoration: 'line-through', margin: 0 }}>
-                    <AnimatedNumber value={results.totalCurrentCost} />
+                    <AnimatedNumber value={results.annualLabour * (automatedPct / 100) + results.qcErrorCost} />
                   </p>
                 </div>
                 <div>
                   <p style={{ fontSize: 11, fontWeight: 600, color: BRAND.greenSave, textTransform: 'uppercase' as const, letterSpacing: '0.06em', marginBottom: 4 }}>QC Cost with AI QC</p>
                   <p style={{ fontSize: 28, fontWeight: 700, color: BRAND.greenSave, fontFamily: 'Georgia, serif', margin: 0 }}>
-                    <AnimatedNumber value={results.aiqcTotalCost} />
+                    <AnimatedNumber value={results.aiqcLabourCost + results.aiqcQcErrorCost} />
                   </p>
                 </div>
                 <div>
                   <p style={{ fontSize: 11, fontWeight: 600, color: BRAND.gold, textTransform: 'uppercase' as const, letterSpacing: '0.06em', marginBottom: 4 }}>Annual Savings</p>
                   <p style={{ fontSize: 28, fontWeight: 700, color: BRAND.gold, fontFamily: 'Georgia, serif', margin: 0 }}>
-                    <AnimatedNumber value={results.savings} />
+                    <AnimatedNumber value={(results.annualLabour * (automatedPct / 100) + results.qcErrorCost) - (results.aiqcLabourCost + results.aiqcQcErrorCost)} />
                   </p>
                 </div>
               </div>
