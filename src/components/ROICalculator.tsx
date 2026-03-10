@@ -319,7 +319,7 @@ const ROICalculator = () => {
     const totalCurrentCost = annualLabour + totalRejectCost;
     const qcErrorCost = totalRejectCost * (qcErrorPct / 100);
     const handlingCost = totalRejectCost * (handlingPct / 100);
-    const aiqcLabourCost = annualLabour * (1 - aiqcLabourReduction / 100);
+    const aiqcLabourCost = annualLabour * (1 - (automatedPct / 100) * (aiqcLabourReduction / 100));
     const aiqcQcErrorCost = totalRejectCost * (aiqcQcErrorPct / 100);
     const aiqcHandlingCost = handlingCost;
     const aiqcTotalRejectCost = aiqcQcErrorCost + aiqcHandlingCost;
