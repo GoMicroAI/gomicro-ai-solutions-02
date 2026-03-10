@@ -510,13 +510,11 @@ const ROICalculator = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Annual Rejection Cost</span>
                 <span style={{ fontSize: 22, fontWeight: 700, color: BRAND.redCost, fontFamily: 'Georgia, serif' }}>
-                  <AnimatedNumber value={results.totalRejectCost} />
+                  <AnimatedNumber value={results.qcErrorCost} />
                 </span>
               </div>
-              <div style={{ display: 'flex', gap: 16, marginTop: 6 }}>
-                <span style={{ fontSize: 11, color: BRAND.textMuted }}>QC errors: {fmt(results.qcErrorCost)}</span>
-                <span style={{ fontSize: 11, color: BRAND.textMuted }}>Handling: {fmt(results.handlingCost)}</span>
-              </div>
+              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 4 }}>{qcErrorPct}% QC Errors of {fmt(results.totalRejectCost)} total rejections</p>
+              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 2 }}>Handling: {fmt(results.handlingCost)} (not included)</p>
             </div>
           </div>
         </div>
