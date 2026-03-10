@@ -460,10 +460,10 @@ const ROICalculator = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <span style={{ fontSize: 12, color: BRAND.redCost, fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>Annual QC Labour Cost</span>
                 <span style={{ fontSize: 22, fontWeight: 700, color: BRAND.redCost, fontFamily: 'Georgia, serif' }}>
-                  <AnimatedNumber value={results.annualLabour} />
+                  <AnimatedNumber value={results.annualLabour * (automatedPct / 100)} />
                 </span>
               </div>
-              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 4 }}>{qcStaff} staff × {qcHoursPerDay}hrs × {results.operatingDays} days × ${hourlyRate}/hr</p>
+              <p style={{ fontSize: 11, color: BRAND.textMuted, marginTop: 4 }}>{automatedPct}% Insp & Recording of {fmt(results.annualLabour)} total labour</p>
             </div>
           </div>
 
